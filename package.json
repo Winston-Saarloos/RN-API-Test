@@ -1,0 +1,24 @@
+{
+  "name": "rr-api-test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Winston-Saarloos/RR-API-Test.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Winston-Saarloos/RR-API-Test/issues"
+  },
+  "homepage": "https://github.com/Winston-Saarloos/RR-API-Test#readme",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "fs": "0.0.1-security",
+    "node-schedule": "^2.0.0"
+  }
+}

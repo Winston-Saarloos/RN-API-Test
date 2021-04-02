@@ -1,11 +1,20 @@
-function compareResults(expected, actual, testName, logResponseToConsole) {
-    if (JSON.stringify(actual) === JSON.stringify(expected)) {
-        console.log(testName + " passed.");
-    } else {
-        console.log(testName + " results did not match what was expected.");
-    };
+var fs = require('fs');
 
-    if (logResponseToConsole) {console.log(actual);}
+function compareResults(actual, testName, writeResponseToFile, url) {
+    var szFilePath = "./ExpectedResults/" + testName + ".json";
+    if (writeResponseToFile) {
+        var szData = JSON.stringify(actual);
+        //console.log(szData);
+        fs.writeFileSync(szFilePath, szData);
+    }
+
+    var expectedResults = require("." + szFilePath);
+
+    if (JSON.stringify(actual) === JSON.stringify(expectedResults)) {
+        console.log(`${testName} test passed.  [${url}]`);
+    } else {
+        console.log(`${testName} test results did not match what was expected.  [${url}]`);
+    };
 }
 
 module.exports.compareResults = compareResults;

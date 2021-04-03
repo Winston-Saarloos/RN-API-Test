@@ -3,8 +3,7 @@ var fs = require('fs');
 function compareResults(actual, testName, writeResponseToFile, url) {
     var szFilePath = "./ExpectedResults/" + testName + ".json";
     if (writeResponseToFile) {
-        var szData = JSON.stringify(actual);
-        //console.log(szData);
+        var szData = JSON.stringify(actual, null, 4);
         fs.writeFileSync(szFilePath, szData);
     }
 

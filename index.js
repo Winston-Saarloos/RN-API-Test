@@ -42,52 +42,43 @@ async function getImageCommentsTest() {
     compareTestResults.compareResults(response, szTestName, false, szUrl);
 }
 
-// // GetImageCheers
-// async function getImageCheers() {
-//     // Parmeters
-//     var szTestName = "Get Image Cheers";
-//     var iImageId = 11137613;
-//     var szUrl = `https://api.rec.net/api/images/v1/${iImageId}/cheers`;
-//     var expectedResults = [
-//         377516, 1730096,
-//        2095391, 2243570,
-//        2734780, 2888044,
-//        2901737, 2907404
-//      ];
+//GetImageCommentsTest
+async function getImageCheers() {
+    // Parmeters
+    var szTestName = "getImageCheers";
+    var iImageId = 11137613;
+    var szUrl = `https://api.rec.net/api/images/v1/${iImageId}/cheers`;
 
-//     // Act
-//     var response = await recnet.getData(szUrl);
+    // Act
+    var response = await recnet.getData(szUrl);
 
-//     // Assert
-//     compareTestResults.compareResults(expectedResults, response, szTestName, false, szUrl);
-// }
+    // Assert
+    compareTestResults.compareResults(response, szTestName, false, szUrl);
+}
 
-// // GetImageCheers
-// async function getImagesOfPlayer() {
-//     // Parmeters
-//     var szTestName = "Get Player Images";
-//     var iPlayerId = 319444;
-//     var szUrl = `https://api.rec.net/api/images/v3/feed/player/${iPlayerId}`;
-//     var expectedResults = [
-//         377516, 1730096,
-//        2095391, 2243570,
-//        2734780, 2888044,
-//        2901737, 2907404
-//      ];
+//GetPlayerImageFeed
+async function getPlayerImageFeed() {
+    // Parmeters
+    var szTestName = "getPlayerImageFeed";
+    var iPlayerId = 319444;
+    // URL parameters 
+    // ?take
+    // ?skip
+    // ?since
+    var szUrl = `https://api.rec.net/api/images/v3/feed/player/${iPlayerId}`;
 
-//     // Act
-//     var response = await recnet.getData(szUrl);
+    // Act
+    var response = await recnet.getData(szUrl);
 
-//     // Assert
-//     compareTestResults.compareResults(expectedResults, response, szTestName, true, szUrl);
-// }
+    // Assert
+    compareTestResults.compareResults(response, szTestName, false, szUrl);
+}
 
 // Test functions
 getImageInformationTest();
 getImageCommentsTest();
-//getImageCommentsTest();
-//getImageCheers();
-//getImagesOfPlayer();
+getPlayerImageFeed();
+getImageCheers();
 
 
 

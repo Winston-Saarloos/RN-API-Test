@@ -1,22 +1,15 @@
 const schedule = require('node-schedule');
-const fs = require('fs');
 
 // Custom Classes
 var recnet = require('./Classes/recnet');
 var compareTestResults = require('./Classes/common');
 
-// Require Tests List
-
-// funciton writeExpectedResultsToFile() {
-
-// }
-
-
 // GET API CALLS
-
+console.log('=================================={ GET }=====================================');
 // GetImageInformationTest
 async function getImageInformationTest() {
     // Parmeters
+    var startTime = new Date()
     var szTestName = "getImageInformation";
     var iImageId = 11137613;
     var szUrl = `https://api.rec.net/api/images/v4/${iImageId}`;
@@ -25,12 +18,13 @@ async function getImageInformationTest() {
     var response = await recnet.getData(szUrl);
 
     // Assert
-    compareTestResults.compareResults(response, szTestName, false, szUrl);
+    compareTestResults.compareResults(response, szTestName, false, szUrl, startTime);
 }
 
 //GetImageCommentsTest
 async function getImageCommentsTest() {
     // Parmeters
+    var startTime = new Date()
     var szTestName = "getImageComments";
     var iImageId = 11137613;
     var szUrl = `https://api.rec.net/api/images/v1/${iImageId}/comments`;
@@ -39,12 +33,13 @@ async function getImageCommentsTest() {
     var response = await recnet.getData(szUrl);
 
     // Assert
-    compareTestResults.compareResults(response, szTestName, false, szUrl);
+    compareTestResults.compareResults(response, szTestName, false, szUrl, startTime);
 }
 
 //GetImageCommentsTest
 async function getImageCheers() {
     // Parmeters
+    var startTime = new Date()
     var szTestName = "getImageCheers";
     var iImageId = 11137613;
     var szUrl = `https://api.rec.net/api/images/v1/${iImageId}/cheers`;
@@ -53,12 +48,13 @@ async function getImageCheers() {
     var response = await recnet.getData(szUrl);
 
     // Assert
-    compareTestResults.compareResults(response, szTestName, false, szUrl);
+    compareTestResults.compareResults(response, szTestName, false, szUrl, startTime);
 }
 
 //GetPlayerImageFeed
 async function getPlayerImageFeed() {
     // Parmeters
+    var startTime = new Date()
     var szTestName = "getPlayerImageFeed";
     var iPlayerId = 319444;
     // URL parameters 
@@ -71,7 +67,7 @@ async function getPlayerImageFeed() {
     var response = await recnet.getData(szUrl);
 
     // Assert
-    compareTestResults.compareResults(response, szTestName, false, szUrl);
+    compareTestResults.compareResults(response, szTestName, false, szUrl, startTime);
 }
 
 // Test functions

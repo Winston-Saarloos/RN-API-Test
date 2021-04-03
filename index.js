@@ -5,7 +5,6 @@ var recnet = require('./Classes/recnet');
 var compareTestResults = require('./Classes/common');
 
 // GET API CALLS
-console.log('=================================={ GET }=====================================');
 // GetImageInformationTest
 async function getImageInformationTest() {
     // Parmeters
@@ -70,13 +69,54 @@ async function getPlayerImageFeed() {
     compareTestResults.compareResults(response, szTestName, false, szUrl, startTime);
 }
 
+//GetPlayerImages
+async function getPlayerImages() {
+    // Parmeters
+    var startTime = new Date()
+    var szTestName = "getPlayerImages";
+    var iPlayerId = 319444;
+    // URL parameters 
+    // ?take
+    // ?skip
+    // ?since
+    var szUrl = `https://api.rec.net/api/images/v4/player/${iPlayerId}`;
+
+    // Act
+    var response = await recnet.getData(szUrl);
+
+    // Assert
+    compareTestResults.compareResults(response, szTestName, false, szUrl, startTime);
+}
+
+//getImagesFromEvent
+async function getImagesFromEvent() {
+    // Parmeters
+    var startTime = new Date()
+    var szTestName = "getImagesFromEvent";
+    var iEventId = 268367;
+    var szUrl = `https://api.rec.net/api/images/v1/playerevent/${iEventId}`;
+
+    // Act
+    var response = await recnet.getData(szUrl);
+
+    // Assert
+    compareTestResults.compareResults(response, szTestName, false, szUrl, startTime);
+}
+
 // Test functions
-getImageInformationTest();
-getImageCommentsTest();
-getPlayerImageFeed();
-getImageCheers();
+async function runTests() {
+    console.log('=================================={[ GET (No Auth) ]}=====================================');
+    await (getImageInformationTest())
+    await (getImageCommentsTest())
+    await (getPlayerImageFeed())
+    await (getImageCheers())
+    await (getPlayerImages())
+    await (getImagesFromEvent())
 
+    console.log("All tests completed.");
+};
 
+runTests();
 
 // https://api.rec.net
 // const job = schedule.scheduleJob('42 * * * *', function(){

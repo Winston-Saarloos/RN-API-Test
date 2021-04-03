@@ -5,7 +5,7 @@ async function getData(url) {
        axios.get(url)
            .then(function (response) {
                // handle success
-               resolve(response.data);
+               resolve(response);
            })
            .catch(function (error) {
                // handle error

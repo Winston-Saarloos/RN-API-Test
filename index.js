@@ -4,6 +4,9 @@ const schedule = require('node-schedule');
 var recnet = require('./Classes/recnet');
 var compareTestResults = require('./Classes/common');
 
+
+// Batch up API calls into groups
+//
 // GET API CALLS
 // GetImageInformationTest
 async function getImageInformationTest() {
@@ -105,18 +108,48 @@ async function getImagesFromEvent() {
 
 // Test functions
 async function runTests() {
-    console.log('=================================={[ GET (No Auth) ]}=====================================');
-    await (getImageInformationTest())
-    await (getImageCommentsTest())
-    await (getPlayerImageFeed())
-    await (getImageCheers())
-    await (getPlayerImages())
-    await (getImagesFromEvent())
+    try {
+        console.log('=================================={[ GET (No Auth) ]}=====================================');
+        await (getImageInformationTest())
+        await (getImageCommentsTest())
+        await (getPlayerImageFeed())
+        await (getImageCheers())
+        await (getPlayerImages())
+        await (getImagesFromEvent())
+    
+        console.log("All tests completed.");
 
-    console.log("All tests completed.");
+    } catch (error) {
+        console.log(error)
+        // send message in Discord about the error that occurred
+    }
 };
 
 runTests();
+
+// // GetImageInformationTest
+// async function getImageInformationTest() {
+//     // Parmeters
+//     var startTime = new Date()
+//     var szTestName = "getImageInformation";
+//     var iImageId = 11137613;
+//     var szUrl = `https://api.rec.net/api/images/v4/${iImageId}`;
+//     var iTotalItemsInResponse = 0;
+//     var iTotalItemsInResponseItem = 0;
+
+
+//     // Act
+//     var response = await recnet.getData(szUrl);
+
+//     // Assert
+//     compareTestResults.compareResults(response, szTestName, false, szUrl, startTime);
+// }
+
+// async function runSingleTest() {
+//     await (getImageInformationTestTest())
+// }
+
+// runSingleTest();
 
 // https://api.rec.net
 // const job = schedule.scheduleJob('42 * * * *', function(){

@@ -1,7 +1,14 @@
 var fs = require('fs');
 const Discord = require("discord.js");
 
-function compareResults(response, testName, writeResponseToFile, url, startTime, message) {
+function compareResults(response, testName, writeResponseToFile, url, startTime) {
+    var results = {
+        "Name": testName,
+        "Status": "",
+        "Url" : url,
+        "Message": "",
+        "Time": 0
+        };
     var endTime = new Date()
     var szFilePath = "./ExpectedResults/" + testName + ".json";
     if (writeResponseToFile) {
@@ -11,26 +18,17 @@ function compareResults(response, testName, writeResponseToFile, url, startTime,
 
     var seconds = (endTime.getTime() - startTime.getTime()) / 1000;
     var expectedResults = require("." + szFilePath);
-    const testMessage = new Discord.MessageEmbed() 
-    .setTitle(testName)
-    .setDescription(url)
 
     if (JSON.stringify(response.data) === JSON.stringify(expectedResults)) {
-        //console.log(`[${seconds} sec] ${testName} test passed.  [${url}]`);
-        //message.channel.send(`[${seconds} sec] ${testName} test passed.  [${url}]`)
-        testMessage.setColor('#00c410');
-        testMessage.addField('Test Status', 'Passed', true);
-        testMessage.addField('Time Taken', `${seconds} sec`, true);
+        results.Status = 'Passed'
+        results.Time = seconds;
     } else {
-        //console.log(`[${seconds} sec] ${testName} test results did not match what was expected.  [${url}]`);
-        //message.channel.send(`[${seconds} sec] ${testName} test results did not match what was expected.  [${url}]`)
-        testMessage.setColor('#c90202')
-        testMessage.addField('Test Status', 'Failed', true)
-        testMessage.addField('Time Taken', `${seconds} sec`, true);
-        testMessage.addField('Error Message', "Test results did not match what was expected", false);
+        results.Status = "Failed"
+        results.Time = seconds;
+        results.Message = "Test results did not match what was expected";
     };
 
-    message.channel.send(testMessage);
+    return results;
 }
 
 module.exports.compareResults = compareResults;

@@ -12,7 +12,7 @@ const client = new Discord.Client();
 //
 // GET API CALLS
 // GetImageInformationTest
-async function getImageInformationTest(message) {
+async function getImageInformationTest() {
     // Parmeters
     var startTime = new Date()
     var szTestName = "getImageInformation";
@@ -23,11 +23,11 @@ async function getImageInformationTest(message) {
     var response = await recnet.getData(szUrl);
 
     // Assert
-    compareTestResults.compareResults(response, szTestName, false, szUrl, startTime, message);
+    return compareTestResults.compareResults(response, szTestName, false, szUrl, startTime);
 }
 
 //GetImageCommentsTest
-async function getImageCommentsTest(message) {
+async function getImageCommentsTest() {
     // Parmeters
     var startTime = new Date()
     var szTestName = "getImageComments";
@@ -38,11 +38,11 @@ async function getImageCommentsTest(message) {
     var response = await recnet.getData(szUrl);
 
     // Assert
-    compareTestResults.compareResults(response, szTestName, false, szUrl, startTime, message);
+    return compareTestResults.compareResults(response, szTestName, false, szUrl, startTime);
 }
 
 //GetImageCommentsTest
-async function getImageCheers(message) {
+async function getImageCheers() {
     // Parmeters
     var startTime = new Date()
     var szTestName = "getImageCheers";
@@ -53,11 +53,11 @@ async function getImageCheers(message) {
     var response = await recnet.getData(szUrl);
 
     // Assert
-    compareTestResults.compareResults(response, szTestName, false, szUrl, startTime, message);
+    return compareTestResults.compareResults(response, szTestName, false, szUrl, startTime);
 }
 
 //GetPlayerImageFeed
-async function getPlayerImageFeed(message) {
+async function getPlayerImageFeed() {
     // Parmeters
     var startTime = new Date()
     var szTestName = "getPlayerImageFeed";
@@ -72,11 +72,11 @@ async function getPlayerImageFeed(message) {
     var response = await recnet.getData(szUrl);
 
     // Assert
-    compareTestResults.compareResults(response, szTestName, false, szUrl, startTime, message);
+    return compareTestResults.compareResults(response, szTestName, false, szUrl, startTime);
 }
 
 //GetPlayerImages
-async function getPlayerImages(message) {
+async function getPlayerImages() {
     // Parmeters
     var startTime = new Date()
     var szTestName = "getPlayerImages";
@@ -91,11 +91,11 @@ async function getPlayerImages(message) {
     var response = await recnet.getData(szUrl);
 
     // Assert
-    compareTestResults.compareResults(response, szTestName, false, szUrl, startTime, message);
+    return compareTestResults.compareResults(response, szTestName, false, szUrl, startTime);
 }
 
 //getImagesFromEvent
-async function getImagesFromEvent(message) {
+async function getImagesFromEvent() {
     // Parmeters
     var startTime = new Date()
     var szTestName = "getImagesFromEvent";
@@ -106,20 +106,22 @@ async function getImagesFromEvent(message) {
     var response = await recnet.getData(szUrl);
 
     // Assert
-    compareTestResults.compareResults(response, szTestName, false, szUrl, startTime, message);
+    return compareTestResults.compareResults(response, szTestName, false, szUrl, startTime);
 }
 
 // Test functions
-async function runTests(message) {
+async function runTests() {
     try {
         console.log('=================================={[ GET (No Auth) ]}=====================================');
-        await (getImageInformationTest(message))
-        await (getImageCommentsTest(message))
-        await (getPlayerImageFeed(message))
-        await (getImageCheers(message))
-        await (getPlayerImages(message))
-        await (getImagesFromEvent(message))
-    
+        var ImageResults = [];
+        ImageResults.push(await getImageInformationTest())
+        ImageResults.push(await getImageCommentsTest())
+        ImageResults.push(await getPlayerImageFeed())
+        ImageResults.push(await getImageCheers())
+        ImageResults.push(await getPlayerImages())
+        ImageResults.push(await getImagesFromEvent())
+        
+        console.log(ImageResults);
         console.log("All tests completed.");
 
     } catch (error) {

@@ -1,5 +1,4 @@
 var fs = require('fs');
-const Discord = require("discord.js");
 
 function compareResults(response, testName, writeResponseToFile, url, startTime) {
     var results = {
@@ -9,6 +8,7 @@ function compareResults(response, testName, writeResponseToFile, url, startTime)
         "Message": "",
         "Time": 0
         };
+
     var endTime = new Date()
     var szFilePath = "./ExpectedResults/" + testName + ".json";
     if (writeResponseToFile) {
@@ -20,7 +20,7 @@ function compareResults(response, testName, writeResponseToFile, url, startTime)
     var expectedResults = require("." + szFilePath);
 
     if (JSON.stringify(response.data) === JSON.stringify(expectedResults)) {
-        results.Status = 'Passed'
+        results.Status = "Passed"
         results.Time = seconds;
     } else {
         results.Status = "Failed"

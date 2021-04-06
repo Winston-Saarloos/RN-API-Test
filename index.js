@@ -110,25 +110,85 @@ async function getImagesFromEvent() {
 }
 
 // Test functions
-async function runTests() {
+async function runTests(message, outputDetailedResults) {
     try {
-        console.log('=================================={[ GET (No Auth) ]}=====================================');
-        var ImageResults = [];
-        ImageResults.push(await getImageInformationTest())
-        ImageResults.push(await getImageCommentsTest())
-        ImageResults.push(await getPlayerImageFeed())
-        ImageResults.push(await getImageCheers())
-        ImageResults.push(await getPlayerImages())
-        ImageResults.push(await getImagesFromEvent())
-        
-        console.log(ImageResults);
-        console.log("All tests completed.");
+        var TestResults = [];
+        TestResults.push(await getImageInformationTest())
+        TestResults.push(await getImageCommentsTest())
+        TestResults.push(await getPlayerImageFeed())
+        TestResults.push(await getImageCheers())
+        TestResults.push(await getPlayerImages())
+        TestResults.push(await getImagesFromEvent())
 
+        await sendTestResultsMessage('[Get] Image Data', TestResults, message, outputDetailedResults);
     } catch (error) {
         console.log(error)
         // send message in Discord about the error that occurred
     }
 };
+
+async function sendTestResultsMessage(testCategoryTitle, testResults, message, outputDetailedResults) {
+    if (!testResults) { return; }
+    if (outputDetailedResults) {
+        for (index = 0; index < testResults.length; index++) {
+            const testResultEmbed = new Discord.MessageEmbed();
+            var testResultCount = testResults.length;
+            testResultEmbed.title = `${testCategoryTitle} [${index + 1}/${testResultCount}]`;
+
+            if (testResults[index].Status == "Passed") {
+                testResultEmbed.setColor("#4aff3d");
+            } else {
+                testResultEmbed.setColor("#fc1100");
+            }
+
+            testResultEmbed.addFields(
+                { name: "Test Name: " + testResults[index].Name, value: "------------------------------------------", inline: false },
+                { name: 'Status:', value: testResults[index].Status, inline: true },
+                { name: 'Test Duration:', value: `${testResults[index].Time} sec`, inline: true }
+            )
+
+            if (testResults[index].Message != '') {
+                testResultEmbed.addField(name = 'Message', value = testResults[index].Message, inline = false)
+            }
+
+            testResultEmbed.setFooter = testResults[index].url;
+
+            message.channel.send(testResultEmbed);
+        }
+    } else {
+        var totalTime = 0;
+        var totalTests = testResults.length;
+        var totalPassed = 0;
+        var totalFailed = 0;
+
+        const testResultEmbed = new Discord.MessageEmbed();
+        testResultEmbed.title = testCategoryTitle;
+
+        testResults.forEach(result => {
+            totalTime += result.Time;
+            if (result.Status == "Passed") {
+                totalPassed += 1;
+            } else {
+                totalFailed += 1;
+            }
+        });
+
+        if (totalFailed == 0) {
+            testResultEmbed.setColor("#4aff3d");
+        } else {
+            testResultEmbed.setColor("#fc1100");
+        }
+
+        testResultEmbed.addFields(
+            { name: "Passed: " + totalPassed, value: "Failed: " + totalFailed, inline: true },
+            { name: 'Status:', value: ((totalFailed = 0) ? 'Passed' : 'Failed'), inline: true },
+            { name: 'Total Test Duration:', value: `${totalTime} sec`, inline: true },
+            { name: "Total Tests: ", value: totalTests, inline: true}
+        )
+
+        message.channel.send(testResultEmbed);
+    }
+}
 
 
 
@@ -212,7 +272,10 @@ client.on("message", async message => {
 
     if (command === "test") {
         message.channel.send('API Test Started..');
-        await runTests(message);
+        var bSendAdvancedResults = ((args[0] == "1") ? true : false);
+
+        await runTests(message, bSendAdvancedResults);
+        message.channel.send('API Tests Completed');
     }
 });
 

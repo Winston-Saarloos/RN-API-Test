@@ -1,0 +1,20 @@
+[
+    {
+        "Id": 4400062,
+        "Type": 1,
+        "Accessibility": 1,
+        "AccessibilityLocked": false,
+        "ImageName": "0a1142a61ccb4d1fa42f3de775621c69",
+        "Description": null,
+        "PlayerId": 1546112,
+        "TaggedPlayerIds": [
+            379678,
+            1546112
+        ],
+        "RoomId": 1104928,
+        "PlayerEventId": null,
+        "CreatedAt": "2019-04-18T05:08:57.5172888Z",
+        "CheerCount": 8,
+        "CommentCount": 0
+    }
+]

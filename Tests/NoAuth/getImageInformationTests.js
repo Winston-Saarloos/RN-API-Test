@@ -12,8 +12,9 @@ async function runTests(message, outputDetailedResults) {
         TestResults.push(await getImageCheers())
         TestResults.push(await getPlayerImages())
         TestResults.push(await getImagesFromEvent())
-
-        await utils.sendTestResultsMessage('[Get] Image Data', TestResults, message, outputDetailedResults);
+        TestResults.push(await getImagesTakenInRoom())
+        
+        await utils.sendTestResultsMessage('[Get] [No Auth] Image Information Tests', TestResults, message, outputDetailedResults);
     } catch (error) {
         console.log(error)
         // send message in Discord about the error that occurred
@@ -117,6 +118,21 @@ async function getImagesFromEvent() {
     var szTestName = "getImagesFromEvent";
     var iEventId = 268367;
     var szUrl = `https://api.rec.net/api/images/v1/playerevent/${iEventId}`;
+
+    // Act
+    var response = await recnet.getData(szUrl);
+
+    // Assert
+    return utils.compareResults(response, szTestName, false, szUrl, startTime, testCategory);
+}
+
+//getImagesTakenInRoom
+async function getImagesTakenInRoom() {
+    // Parmeters
+    var startTime = new Date()
+    var szTestName = "getImagesTakenInRoom";
+    var iRoomId = 1104928;
+    var szUrl = `https://api.rec.net/api/images/v4/room/${iRoomId}`;
 
     // Act
     var response = await recnet.getData(szUrl);

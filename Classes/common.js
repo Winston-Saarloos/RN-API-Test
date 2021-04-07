@@ -61,7 +61,7 @@ async function sendTestResultsMessage(testCategoryTitle, testResults, message, o
             )
 
             if (testResults[index].Message != '') {
-                testResultEmbed.addField({name: 'Message', value: testResults[index].Message, inline: false});
+                testResultEmbed.addField('Message', testResults[index].Message, false);
             }
 
             testResultEmbed.setFooter(testResults[index].Uri);

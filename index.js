@@ -4,7 +4,8 @@ const Discord = require("discord.js");
 const config = require('./Config/config.json');
 const client = new Discord.Client();
 
-var images = require('./Tests/NoAuth/ImageTests.js');
+// Test Functions
+var images = require('./Tests/NoAuth/getImageInformationTests.js');
 
 // Development Value
 const DEVELOPMENT_MODE = true;
@@ -34,13 +35,13 @@ client.on("ready", () => {
 client.on("message", async message => {
     if (message.author.bot) return;
 
-    if (DEVELOPMENT_MODE && message.author != Rocko) {
-        return message.reply("Sorry, you don't have permissions to use this!");
-    };
-
     if (DEVELOPMENT_MODE) {
         if (message.channel.id != sandboxChannel) return;
     }
+
+    if (DEVELOPMENT_MODE && message.author != Rocko) {
+        return message.reply("Sorry, you don't have permissions to use this!");
+    };
 
     //console.log(message.author);
 

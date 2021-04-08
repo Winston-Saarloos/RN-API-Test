@@ -268,7 +268,7 @@
         "RoomId": 170134,
         "PlayerEventId": null,
         "CreatedAt": "2021-03-18T00:47:30.8907048Z",
-        "CheerCount": 260,
+        "CheerCount": 265,
         "CommentCount": 30
     },
     {
@@ -400,7 +400,7 @@
         "RoomId": 170141,
         "PlayerEventId": null,
         "CreatedAt": "2021-03-12T01:39:37.6286949Z",
-        "CheerCount": 152,
+        "CheerCount": 158,
         "CommentCount": 30
     },
     {
@@ -442,7 +442,7 @@
         "RoomId": 170137,
         "PlayerEventId": null,
         "CreatedAt": "2021-03-12T01:00:39.916495Z",
-        "CheerCount": 97,
+        "CheerCount": 98,
         "CommentCount": 18
     },
     {
@@ -1150,7 +1150,7 @@
         "RoomId": 170135,
         "PlayerEventId": null,
         "CreatedAt": "2021-02-21T18:20:32.962324Z",
-        "CheerCount": 67,
+        "CheerCount": 70,
         "CommentCount": 7
     },
     {
@@ -1165,7 +1165,7 @@
         "RoomId": 170136,
         "PlayerEventId": null,
         "CreatedAt": "2021-02-21T18:08:20.7397365Z",
-        "CheerCount": 212,
+        "CheerCount": 217,
         "CommentCount": 16
     },
     {
@@ -1241,7 +1241,7 @@
         "RoomId": 170135,
         "PlayerEventId": null,
         "CreatedAt": "2021-02-19T23:15:27.6264635Z",
-        "CheerCount": 287,
+        "CheerCount": 290,
         "CommentCount": 18
     }
 ]

@@ -6,6 +6,7 @@ const client = new Discord.Client();
 
 // Test Functions
 var images = require('./Tests/NoAuth/getImageInformationTests.js');
+var imagesBulk = require('./Tests/NoAuth/postBulkImageInformationTests.js');
 
 // Development Value
 const DEVELOPMENT_MODE = true;
@@ -61,6 +62,8 @@ client.on("message", async message => {
         var bSendAdvancedResults = ((args[0] == "1") ? true : false);
 
         await images.getImageInformationTests(message, bSendAdvancedResults);
+        //await imagesBulk.postImageInformationTests(message, bSendAdvancedResults);
+
         message.channel.send('API Tests Completed');
     }
 });

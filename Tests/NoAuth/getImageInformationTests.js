@@ -25,7 +25,7 @@ async function getImageInformationTests(message, outputDetailedResults) {
 
 module.exports.getImageInformationTests = getImageInformationTests;
 
-var testCategory = 'NoAuth/ImageTests/';
+var testCategory = 'NoAuth/GetImageTests/';
 
 // Batch up API calls into groups
 //

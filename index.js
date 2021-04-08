@@ -60,7 +60,7 @@ client.on("message", async message => {
         message.channel.send('API Test Started..');
         var bSendAdvancedResults = ((args[0] == "1") ? true : false);
 
-        await images.runTests(message, bSendAdvancedResults);
+        await images.getImageInformationTests(message, bSendAdvancedResults);
         message.channel.send('API Tests Completed');
     }
 });

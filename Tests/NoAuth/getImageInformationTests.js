@@ -3,7 +3,7 @@ var recnet = require('../../Classes/recnet');
 var utils = require('../../Classes/common');
 
 // Main Function for running all tests in file
-async function runTests(message, outputDetailedResults) {
+async function getImageInformationTests(message, outputDetailedResults) {
     try {
         var TestResults = [];
         TestResults.push(await getImageInformationTest())
@@ -13,6 +13,8 @@ async function runTests(message, outputDetailedResults) {
         TestResults.push(await getPlayerImages())
         TestResults.push(await getImagesFromEvent())
         TestResults.push(await getImagesTakenInRoom())
+        TestResults.push(await getGlobalImageFeed())
+
         
         await utils.sendTestResultsMessage('[Get] [No Auth] Image Information Tests', TestResults, message, outputDetailedResults);
     } catch (error) {
@@ -21,7 +23,7 @@ async function runTests(message, outputDetailedResults) {
     }
 };
 
-module.exports.runTests = runTests;
+module.exports.getImageInformationTests = getImageInformationTests;
 
 var testCategory = 'NoAuth/ImageTests/';
 
@@ -111,7 +113,7 @@ async function getPlayerImages() {
     return utils.compareResults(response, szTestName, false, szUrl, startTime, testCategory);
 }
 
-//getImagesFromEvent
+// getImagesFromEvent
 async function getImagesFromEvent() {
     // Parmeters
     var startTime = new Date()
@@ -126,7 +128,7 @@ async function getImagesFromEvent() {
     return utils.compareResults(response, szTestName, false, szUrl, startTime, testCategory);
 }
 
-//getImagesTakenInRoom
+// getImagesTakenInRoom
 async function getImagesTakenInRoom() {
     // Parmeters
     var startTime = new Date()
@@ -139,4 +141,21 @@ async function getImagesTakenInRoom() {
 
     // Assert
     return utils.compareResults(response, szTestName, false, szUrl, startTime, testCategory);
+}
+
+// getGlobalImageFeed
+// RecNet Home
+async function getGlobalImageFeed() {
+    // Parmeters
+    var startTime = new Date()
+    var szTestName = "getGlobalImageFeed";
+    var takeAmount = 5;
+    var szUrl = `https://api.rec.net/api/images/v3/feed/global?take=${takeAmount}`;
+
+    // Act
+    var response = await recnet.getData(szUrl);
+    var objectKeyList = ['Id', 'Type', 'Accessibility', 'AccessibilityLocked', 'ImageName', 'Description', 'PlayerId', 'TaggedPlayerIds', 'RoomId', 'PlayerEventId', 'CreatedAt', 'CheerCount', 'CommentCount'];
+
+    // Assert
+    return utils.compareSpecificResults(response, szTestName, szUrl, startTime, objectKeyList, takeAmount);
 }

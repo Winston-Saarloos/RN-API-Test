@@ -1,8 +1,9 @@
 var fs = require('fs');
 const Discord = require("discord.js");
+var _ = require('lodash');
 
 function compareResults(response, testName, writeResponseToFile, url, startTime, testCategoryPath) {
-    var results = {
+    var testResults = {
         "Name": testName,
         "Status": "",
         "Uri" : url,
@@ -10,29 +11,74 @@ function compareResults(response, testName, writeResponseToFile, url, startTime,
         "Time": 0
         };
 
-    var endTime = new Date()
     var szFilePath = `./ExpectedResults/${testCategoryPath}${testName}.json`;
     if (writeResponseToFile) {
         var szData = JSON.stringify(response.data, null, 4);
         fs.writeFileSync(szFilePath, szData);
     }
 
+    var endTime = new Date()
     var seconds = (endTime.getTime() - startTime.getTime()) / 1000;
     var expectedResults = require("." + szFilePath);
 
     if (JSON.stringify(response.data) === JSON.stringify(expectedResults)) {
-        results.Status = "Passed"
-        results.Time = seconds;
+        testResults.Status = "Passed"
+        testResults.Time = seconds;
     } else {
-        results.Status = "Failed"
-        results.Time = seconds;
-        results.Message = "Test results did not match what was expected";
+        testResults.Status = "Failed"
+        testResults.Time = seconds;
+        testResults.Message = "Test results did not match what was expected";
     };
 
-    return results;
+    return testResults;
 }
 
 module.exports.compareResults = compareResults;
+
+// Compares the specific keys and length of an object
+//   This function is best used when comparing the results of objects that are time sensitive
+function compareSpecificResults(response, testName, url, startTime, objectKeyList, responseLength) {
+    var testResults = {
+        "Name": testName,
+        "Status": "",
+        "Uri": url,
+        "Message": "",
+        "Time": 0
+    }
+
+    // Verify the response returned the correct number of results
+    if (response.data.length == responseLength) {
+        testResults.Status = "Passed";
+    } else {
+        testResults.Message += "Response did not contain the expected number of objects.  ";
+    };
+
+    // Verify a single object's length
+    var singleObject = response.data[0];
+    if (Object.keys(singleObject).length == objectKeyList.length) {
+        testResults.Status = "Passed"
+    } else {
+        testResults.Message += `Single response object did not contain the expected number of keys [${objectKeyList.length}].  `;
+    };
+
+    objectKeyList.forEach(element => {
+        if (!(singleObject.hasOwnProperty(element))) {
+            testResults.Message += `Single object from response did not contain expected key [${element}].  `
+        }
+    });
+
+    if (testResults.Message != '') {
+        testResults.Status = "Failed";
+    }
+
+    var endTime = new Date();
+    var seconds = (endTime.getTime() - startTime.getTime()) / 1000;
+    testResults.Time = seconds;
+
+    return testResults;
+}
+
+module.exports.compareSpecificResults = compareSpecificResults;
 
 async function sendTestResultsMessage(testCategoryTitle, testResults, message, outputDetailedResults) {
     const greenCheckMark = 'https://discord.com/assets/212e30e47232be03033a87dc58edaa95.svg';

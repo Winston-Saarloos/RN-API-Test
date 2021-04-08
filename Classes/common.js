@@ -11,6 +11,13 @@ function compareResults(response, testName, writeResponseToFile, url, startTime,
         "Time": 0
         };
 
+    if (!response.data) {
+        console.log('Hmmmmmmmmmmmmmmmmmmmmmmmmmmm');
+        console.log(response.response.status);
+    
+        return testResults
+    };
+
     var szFilePath = `./ExpectedResults/${testCategoryPath}${testName}.json`;
     if (writeResponseToFile) {
         var szData = JSON.stringify(response.data, null, 4);

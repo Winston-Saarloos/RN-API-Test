@@ -37,8 +37,11 @@ async function postData(url, formData) {
             })
             .catch(function (error) {
                 //handle error
-                //console.log('=============================================== Error ====================================================');
+                console.log('=============================================== Error ====================================================');
                 //console.log(error);
+                console.log(error.response.data);
+                console.log(error.response.headers);
+                console.log(error.response.status);
                 return error;
             });
 }

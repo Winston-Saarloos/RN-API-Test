@@ -12,7 +12,7 @@ async function postImageInformationTests(message, outputDetailedResults) {
         
         await utils.sendTestResultsMessage('[Post] [No Auth] Image Information Bulk Tests', TestResults, message, outputDetailedResults);
     } catch (error) {
-        console.log(error)
+        console.log('An error occured performing postImageInformationTests: ' + error)
         // send message in Discord about the error that occurred
     }
 };
@@ -35,7 +35,6 @@ async function postImageInformationBulk() {
     // Act
     var response = await recnet.postData(szUrl, formData);
 
-    console.log(response);
     // Assert
     return utils.compareResults(response, szTestName, true, szUrl, startTime, testCategory);
 }

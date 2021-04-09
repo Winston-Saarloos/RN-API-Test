@@ -6,36 +6,38 @@ function compareResults(response, testName, writeResponseToFile, url, startTime,
     var testResults = {
         "Name": testName,
         "Status": "",
-        "Uri" : url,
+        "Uri": url,
         "Message": "",
-        "Time": 0
-        };
-
-    if (!response.data) {
-        console.log('Hmmmmmmmmmmmmmmmmmmmmmmmmmmm');
-        console.log(response.response.status);
-    
-        return testResults
+        "Time": 0,
+        "requestStatus": 0
     };
 
-    var szFilePath = `./ExpectedResults/${testCategoryPath}${testName}.json`;
-    if (writeResponseToFile) {
-        var szData = JSON.stringify(response.data, null, 4);
-        fs.writeFileSync(szFilePath, szData);
+    if (response.status == 200) {
+        var szFilePath = `./ExpectedResults/${testCategoryPath}${testName}.json`;
+        if (writeResponseToFile) {
+            console.log('Writing expected results file.');
+            var szData = JSON.stringify(response.data, null, 4);
+            fs.writeFileSync(szFilePath, szData);
+        }
+
+        var expectedResults = require("." + szFilePath);
+
+        if (JSON.stringify(response.data) === JSON.stringify(expectedResults)) {
+            testResults.Status = "Passed"
+        } else {
+            testResults.Status = "Failed"
+            testResults.Message = "Test results did not match what was expected.";
+        };
+
+    } else {
+        testResults.Status = "Failed";
     }
+
+    testResults.requestStatus = response.status;
 
     var endTime = new Date()
     var seconds = (endTime.getTime() - startTime.getTime()) / 1000;
-    var expectedResults = require("." + szFilePath);
-
-    if (JSON.stringify(response.data) === JSON.stringify(expectedResults)) {
-        testResults.Status = "Passed"
-        testResults.Time = seconds;
-    } else {
-        testResults.Status = "Failed"
-        testResults.Time = seconds;
-        testResults.Message = "Test results did not match what was expected";
-    };
+    testResults.Time = seconds;
 
     return testResults;
 }
@@ -50,35 +52,43 @@ function compareSpecificResults(response, testName, url, startTime, objectKeyLis
         "Status": "",
         "Uri": url,
         "Message": "",
-        "Time": 0
+        "Time": 0,
+        "requestStatus": 0
     }
 
-    // Verify the response returned the correct number of results
-    if (response.data.length == responseLength) {
-        testResults.Status = "Passed";
-    } else {
-        testResults.Message += "Response did not contain the expected number of objects.  ";
-    };
+    if (response.status == 200) {
 
-    // Verify a single object's length
-    var singleObject = response.data[0];
-    if (Object.keys(singleObject).length == objectKeyList.length) {
-        testResults.Status = "Passed"
-    } else {
-        testResults.Message += `Single response object did not contain the expected number of keys [${objectKeyList.length}].  `;
-    };
+        // Verify the response returned the correct number of results
+        if (response.data.length == responseLength) {
+            testResults.Status = "Passed";
+        } else {
+            testResults.Message += "Response did not contain the expected number of objects.  ";
+        };
 
-    objectKeyList.forEach(element => {
-        if (!(singleObject.hasOwnProperty(element))) {
-            testResults.Message += `Single object from response did not contain expected key [${element}].  `
+        // Verify a single object's length
+        var singleObject = response.data[0];
+        if (Object.keys(singleObject).length == objectKeyList.length) {
+            testResults.Status = "Passed"
+        } else {
+            testResults.Message += `Single response object did not contain the expected number of keys [${objectKeyList.length}].  `;
+        };
+
+        objectKeyList.forEach(element => {
+            if (!(singleObject.hasOwnProperty(element))) {
+                testResults.Message += `Single object from response did not contain expected key [${element}].  `
+            }
+        });
+
+        if (testResults.Message != '') {
+            testResults.Status = "Failed";
         }
-    });
 
-    if (testResults.Message != '') {
+    } else {
         testResults.Status = "Failed";
     }
 
-    var endTime = new Date();
+    testResults.requestStatus = response.status;
+    var endTime = new Date()
     var seconds = (endTime.getTime() - startTime.getTime()) / 1000;
     testResults.Time = seconds;
 
@@ -108,8 +118,9 @@ async function sendTestResultsMessage(testCategoryTitle, testResults, message, o
             testResultEmbed.setTitle(`${testCategoryTitle} [${index + 1}/${testResultCount}]`);
             testResultEmbed.setThumbnail(statusIcon);
             testResultEmbed.addFields(
-                { name: "Test Name: " + testResults[index].Name, value: "----------------------------------------------------------------", inline: false },
+                { name: "Test Name: " + testResults[index].Name, value: "--------", inline: false },
                 { name: 'Status:', value: testResults[index].Status, inline: true },
+                { name: 'URI Status: ', value: testResults[index].requestStatus, inline : true },
                 { name: 'Test Duration:', value: `${testResults[index].Time} sec`, inline: true }
             )
 
@@ -150,7 +161,7 @@ async function sendTestResultsMessage(testCategoryTitle, testResults, message, o
         testResultEmbed.setThumbnail(statusIcon);
         testResultEmbed.addFields(
             { name: "Passed: " + totalPassed, value: "Failed: " + totalFailed, inline: true },
-            { name: 'Status:', value: ((totalFailed = 0) ? 'Passed' : 'Failed'), inline: true },
+            { name: 'Test Status: ', value: ((totalFailed = 0) ? 'Passed' : 'Failed'), inline: true },
             { name: 'Total Test Duration:', value: `${totalTime} sec`, inline: true },
             { name: "Total Tests: ", value: totalTests, inline: true}
         )

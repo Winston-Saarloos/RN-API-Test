@@ -62,7 +62,7 @@ client.on("message", async message => {
         var bSendAdvancedResults = ((args[0] == "1") ? true : false);
 
         await images.getImageInformationTests(message, bSendAdvancedResults);
-        await imagesBulk.postImageInformationTests(message, bSendAdvancedResults);
+        //await imagesBulk.postImageInformationTests(message, bSendAdvancedResults);
 
         message.channel.send('API Tests Completed');
     }

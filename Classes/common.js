@@ -59,10 +59,12 @@ function compareSpecificResults(response, testName, url, startTime, objectKeyLis
     if (response.status == 200) {
 
         // Verify the response returned the correct number of results
-        if (response.data.length == responseLength) {
-            testResults.Status = "Passed";
-        } else {
-            testResults.Message += "Response did not contain the expected number of objects.  ";
+        if (responseLength != null) {
+            if (response.data.length == responseLength) {
+                testResults.Status = "Passed";
+            } else {
+                testResults.Message += "Response did not contain the expected number of objects.  ";
+            };
         };
 
         // Verify a single object's length
@@ -161,7 +163,7 @@ async function sendTestResultsMessage(testCategoryTitle, testResults, message, o
         testResultEmbed.setThumbnail(statusIcon);
         testResultEmbed.addFields(
             { name: "Passed: " + totalPassed, value: "Failed: " + totalFailed, inline: true },
-            { name: 'Test Status: ', value: ((totalFailed = 0) ? 'Passed' : 'Failed'), inline: true },
+            { name: 'Test Status: ', value: ((totalFailed == 0) ? 'Passed' : 'Failed'), inline: true },
             { name: 'Total Test Duration:', value: `${totalTime} sec`, inline: true },
             { name: "Total Tests: ", value: totalTests, inline: true}
         )

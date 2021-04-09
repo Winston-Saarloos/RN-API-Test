@@ -6,7 +6,10 @@ var utils = require('../../Classes/common');
 async function getAccountTests(message, outputDetailedResults) {
     try {
         var TestResults = [];
-        TestResults.push(await getPlayerInformationTest())
+        TestResults.push(await getPlayerInformationFromIdTest());
+        TestResults.push(await getPlayerInformationFromNameTest());
+        TestResults.push(await getPlayerBioFromIdTest());
+        TestResults.push(await getPlayerSearchResultsTest());
 
         await utils.sendTestResultsMessage('[Get] [No Auth] Account Information Tests', TestResults, message, outputDetailedResults);
     } catch (error) {
@@ -21,10 +24,10 @@ var testCategory = 'NoAuth/GetAccountTests/';
 
 // GET API CALLS
 // getPlayerInformationTest
-async function getPlayerInformationTest() {
+async function getPlayerInformationFromIdTest() {
     // Parmeters
     var startTime = new Date()
-    var szTestName = "getPlayerInformation";
+    var szTestName = "getPlayerInformationFromId";
     var iPlayerId = 5360404;
     var szUrl = `https://accounts.rec.net/account/${iPlayerId}`;
 
@@ -32,22 +35,54 @@ async function getPlayerInformationTest() {
     var response = await recnet.getData(szUrl);
 
     // Assert
-    return utils.compareResults(response, szTestName, true, szUrl, startTime, testCategory);
+    return utils.compareResults(response, szTestName, false, szUrl, startTime, testCategory);
 }
 
-// getGlobalImageFeed
-// RecNet Home
-async function getGlobalImageFeed() {
+// GET API CALLS
+// getPlayerInformationFromNameTest
+async function getPlayerInformationFromNameTest() {
     // Parmeters
     var startTime = new Date()
-    var szTestName = "getGlobalImageFeed";
-    var takeAmount = 5;
-    var szUrl = `https://api.rec.net/api/images/v3/feed/global?take=${takeAmount}`;
+    var szTestName = "getPlayerInformationFromName";
+    var szPlayerName = 'SparklingDeer358';
+    var szUrl = `https://accounts.rec.net/account?username=${szPlayerName}`;
 
     // Act
     var response = await recnet.getData(szUrl);
-    var objectKeyList = ['Id', 'Type', 'Accessibility', 'AccessibilityLocked', 'ImageName', 'Description', 'PlayerId', 'TaggedPlayerIds', 'RoomId', 'PlayerEventId', 'CreatedAt', 'CheerCount', 'CommentCount'];
 
     // Assert
-    return utils.compareSpecificResults(response, szTestName, szUrl, startTime, objectKeyList, takeAmount);
+    return utils.compareResults(response, szTestName, false, szUrl, startTime, testCategory);
+}
+
+// GET API CALLS
+// getPlayerBioFromId
+async function getPlayerBioFromIdTest() {
+    // Parmeters
+    var startTime = new Date()
+    var szTestName = "getPlayerBioFromId";
+    var iPlayerId = 5360404;
+    var szUrl = `https://accounts.rec.net/account/${iPlayerId}/bio`;
+
+    // Act
+    var response = await recnet.getData(szUrl);
+
+    // Assert
+    return utils.compareResults(response, szTestName, false, szUrl, startTime, testCategory);
+}
+
+// getPlayerSearchResults
+// Rec Net Search Bar
+async function getPlayerSearchResultsTest() {
+    // Parmeters
+    var startTime = new Date()
+    var szTestName = "getPlayerSearchResults";
+    var szSeachParameter = 'SparklingDeer358';
+    var szUrl = `https://accounts.rec.net/account/search?name=${szSeachParameter}`;
+
+    // Act
+    var response = await recnet.getData(szUrl);
+    var objectKeyList = ['accountId', 'username', 'displayName', 'profileImage', 'isJunior', 'platforms', 'createdAt'];
+
+    // Assert
+    return utils.compareSpecificResults(response, szTestName, szUrl, startTime, objectKeyList, null);
 }

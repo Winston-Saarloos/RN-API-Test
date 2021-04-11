@@ -5,9 +5,10 @@ const config = require('./Config/config.json');
 const client = new Discord.Client();
 
 // Test Functions
-var images = require('./Tests/NoAuth/getImageInformationTests.js');
-var account = require('./Tests/NoAuth/getAccountTests.js');
-var imagesBulk = require('./Tests/NoAuth/postBulkImageInformationTests.js');
+var images = require('./Tests/NoAuth/getImageInfoTests.js');
+var account = require('./Tests/NoAuth/getAccountInfoTests.js');
+var rooms = require('./Tests/NoAuth/getRoomInfoTests.js');
+//var imagesBulk = require('./Tests/NoAuth/postBulkImageInfoTests.js');
 
 // Development Value
 const DEVELOPMENT_MODE = true;
@@ -62,8 +63,9 @@ client.on("message", async message => {
         message.channel.send('API Test Started..');
         var bSendAdvancedResults = ((args[0] == "1") ? true : false);
 
-        await images.getImageInformationTests(message, bSendAdvancedResults);
-        await account.getAccountTests(message, bSendAdvancedResults);
+        //await images.getImageInfoTests(message, bSendAdvancedResults);
+        //await account.getAccountInfoTests(message, bSendAdvancedResults);
+        await rooms.getRoomInfoTests(message, bSendAdvancedResults);
 
         //await imagesBulk.postImageInformationTests(message, bSendAdvancedResults);
 

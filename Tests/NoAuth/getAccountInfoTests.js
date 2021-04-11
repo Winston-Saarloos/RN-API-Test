@@ -3,7 +3,7 @@ var recnet = require('../../Classes/recnet');
 var utils = require('../../Classes/common');
 
 // Main Function for running all tests in file
-async function getAccountTests(message, outputDetailedResults) {
+async function getAccountInfoTests(message, outputDetailedResults) {
     try {
         var TestResults = [];
         TestResults.push(await getPlayerInformationFromIdTest());
@@ -18,7 +18,7 @@ async function getAccountTests(message, outputDetailedResults) {
     }
 };
 
-module.exports.getAccountTests = getAccountTests;
+module.exports.getAccountInfoTests = getAccountInfoTests;
 
 var testCategory = 'NoAuth/GetAccountTests/';
 

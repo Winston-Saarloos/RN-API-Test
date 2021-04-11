@@ -173,3 +173,140 @@ async function sendTestResultsMessage(testCategoryTitle, testResults, message, o
 }
 
 module.exports.sendTestResultsMessage = sendTestResultsMessage;
+
+// Compares the specific keys and length of an object
+//   This function is best used when comparing the results of objects that are time sensitive
+function compareResultObjects(response, testName, url, startTime, expectedObject) {
+    var testResults = {
+        "Name": testName,
+        "Status": "",
+        "Uri": url,
+        "Message": "",
+        "Time": 0,
+        "requestStatus": 0
+    }
+
+    if (response.status == 200) {
+
+        testResults.Message = compareValues(response.data, expectedObject);
+
+    } else {
+        testResults.Status = "Failed";
+    }
+
+    if (testResults.Message != '') {
+        testResults.Status = "Failed";
+    } else {
+        testResults.Status = "Passed";
+    }
+
+    testResults.requestStatus = response.status;
+    var endTime = new Date()
+    var seconds = (endTime.getTime() - startTime.getTime()) / 1000;
+    testResults.Time = seconds;
+
+    return testResults;
+}
+
+module.exports.compareResultObjects = compareResultObjects;
+
+var resultCollection = [];
+
+function compareValues(JSONObjectA, JSONObjectB) {
+    var message = '';
+    var object1 = JSONObjectA;
+    var object2 = JSONObjectB;
+    resultCollection = new Array();
+
+    if (typeof object1 === 'object') {
+        var keysA = Object.keys(object1).sort(),
+            keysB = Object.keys(object2).sort();
+
+        //if a and b are objects with different no of keys, unequal
+        if (keysA.length !== keysB.length) {
+            message += `Response JSON is not the same length as expected JSON. Expected Length: [${keysB.length}] \n`;
+        }
+
+        //if keys aren't all the same, unequal
+        var currentA, currentB;
+        if (!keysA.every(function (k, i) { console.log(`[${k} === ${keysB[i]}]  [${k === keysB[i]}]`); currentA = k; currentB = keysB[i]; return k === keysB[i]; })) {
+            message += `Actual and expected keys do not match. [${currentA} did not equal ${currentB}] \n`;
+        }
+
+        var currentKey;
+        //recurse on the values for each key
+        var passed = keysA.every(function (key) {
+            //if we made it here, they have identical keys
+            currentKey = key;
+            var result = compareValue(object1[key], object2[key]);
+            resultCollection.push(result);
+            console.log(result.status);
+            return result.status;
+        });
+
+        if (passed != true) {
+            message += `Actual and expected keys did not match.  Difference occured at: [${currentKey}] \n`;
+        }
+        //for primitives just use a straight up check
+    }
+
+    for (index = 0; index < resultCollection.length; index++) {
+        if (resultCollection[index].message != '') {
+            message += resultCollection[index].message + " \n";
+        }
+    };
+
+    return message;
+}
+
+function compareValue(object1, object2) {
+
+    if ((object1 != null || object1 != undefined) && typeof object1 === 'object') {
+        var keysA = Object.keys(object1).sort(),
+            keysB = Object.keys(object2).sort();
+
+        //if a and b are objects with different no of keys, unequal
+        if (keysA.length !== keysB.length) {
+            console.log('Keys are not the same length');
+            resultCollection.push({"status": false, "message": message = `Response JSON is not the same length as expected JSON. Expected Length: [${keysB.length}]`});
+            return false;
+        }
+
+        //if keys aren't all the same, unequal
+        var currentA, currentB;
+        if (!keysA.every(function (k, i) { console.log(`[${k} === ${keysB[i]}]  [${k === keysB[i]}]`); currentA = k; currentB = keysB[i]; return k === keysB[i]; })) {
+            resultCollection.push({"status": false, "message": `Actual and expected keys do not match. [${currentA} did not equal ${currentB}]`});
+            return false;
+        }
+
+        //recurse on the values for each key
+        var currentKey;
+        var passed = keysA.every(function (key) {
+            //if we made it here, they have identical keys
+            currentKey = key;
+            var result = compareValue(object1[key], object2[key])
+            if (result == false || result.status == false) {
+                resultCollection.push({"status": ((result.status != undefined) ? result.status : result), "message": ((result.message != undefined) ? result.message : '')});
+            }
+            return result.status;
+        });
+
+        if (passed != true) {
+            resultCollection.push({"status": false, "message": `Actual and expected keys did not match.  Difference occured at: [${currentKey}]`});
+            return false;
+        }
+    }
+
+    var message = '';
+    var status = true;
+    for (index = 0; index < resultCollection.length; index++) {
+        if (resultCollection[index].message != '' && status == true) {
+            status = false;
+        }
+    };
+
+    return {"status" : true, "message": ''};
+}
+
+// //true if their structure, values, and keys are identical    
+// var passed = compareValues(jsonA, jsonB); 

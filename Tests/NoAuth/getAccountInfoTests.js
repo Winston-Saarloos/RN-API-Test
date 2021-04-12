@@ -3,15 +3,16 @@ var recnet = require('../../Classes/recnet');
 var utils = require('../../Classes/common');
 
 // Main Function for running all tests in file
-async function getAccountInfoTests(message, outputDetailedResults) {
+async function getAccountInfoTests(message, outputDetailedResults, client) {
     try {
         var TestResults = [];
         TestResults.push(await getPlayerInformationFromIdTest());
         TestResults.push(await getPlayerInformationFromNameTest());
         TestResults.push(await getPlayerBioFromIdTest());
         TestResults.push(await getPlayerSearchResultsTest());
+        TestResults.push(await getIdFromUsername());
 
-        await utils.sendTestResultsMessage('[Get] [No Auth] Account Information Tests', TestResults, message, outputDetailedResults);
+        await utils.sendTestResultsMessage('[Get] [No Auth] Account Information Tests', TestResults, message, outputDetailedResults, client);
     } catch (error) {
         console.log(error)
         // send message in Discord about the error that occurred
@@ -85,4 +86,19 @@ async function getPlayerSearchResultsTest() {
 
     // Assert
     return utils.compareSpecificResults(response, szTestName, szUrl, startTime, objectKeyList, null);
+}
+
+// getIdFromUsername
+async function getIdFromUsername() {
+    // Parmeters
+    var startTime = new Date()
+    var szTestName = "getIdFromUsername";
+    var iPlayerId = 5360404;
+    var szUrl = `https://accounts.rec.net/account/${iPlayerId}/username`;
+
+    // Act
+    var response = await recnet.getData(szUrl);
+
+    // Assert
+    return utils.compareResults(response, szTestName, false, szUrl, startTime, testCategory);
 }

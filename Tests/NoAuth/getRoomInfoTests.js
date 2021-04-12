@@ -3,15 +3,15 @@ var recnet = require('../../Classes/recnet');
 var utils = require('../../Classes/common');
 
 // Main Function for running all tests in file
-async function getRoomInfoTests(message, outputDetailedResults) {
+async function getRoomInfoTests(message, outputDetailedResults, client) {
     try {
         var TestResults = [];
-        //TestResults.push(await getRoomInfoFromId())
-        //TestResults.push(await getRoomInfoFromName())
-        //TestResults.push(await getRoomsOwnedByPlayer())
+        TestResults.push(await getRoomInfoFromId())
+        TestResults.push(await getRoomInfoFromName())
+        TestResults.push(await getRoomsOwnedByPlayer())
         TestResults.push(await getRoomFromSearch())
 
-        await utils.sendTestResultsMessage('[Get] [No Auth] Room Information Tests', TestResults, message, outputDetailedResults);
+        await utils.sendTestResultsMessage('[Get] [No Auth] Room Information Tests', TestResults, message, outputDetailedResults, client);
     } catch (error) {
         console.log(error)
         // send message in Discord about the error that occurred
@@ -35,13 +35,45 @@ async function getRoomInfoFromId() {
 
     // Act
     var response = await recnet.getData(szUrl);
-    var objectKeyList = ['RoomId', 'IsDorm', 'CloningAllowed', 'DisableMicAutoMute', 'DisableRoomComments', 'EncryptVoiceChat', 
-                         'LoadScreenLocked', 'Name', 'Description', 'ImageName', 'WarningMask', 'CustomWarning', 'CreatorAccountId', 
-                         'State', 'Accessibility', "SupportsLevelVoting", "IsRRO", "SupportsScreens", "SupportsWalkVR", "SupportsTeleportVR",
-                         'SupportsVRLow', 'SupportsQuest2', 'SupportsMobile', 'SupportsJuniors', 'MinLevel', 'CreatedAt', 'Stats'];
+    var expectedObject = [
+        {
+          "RoomId": 170126,
+          "IsDorm": false,
+          "CloningAllowed": false,
+          "DisableMicAutoMute": false,
+          "DisableRoomComments": false,
+          "EncryptVoiceChat": false,
+          "LoadScreenLocked": false,
+          "Name": "RecCenter",
+          "Description": "A social hub to meet and mingle with friends new and old.",
+          "ImageName": "22eefa3219f046fd9e2090814650ede3",
+          "WarningMask": 0,
+          "CustomWarning": null,
+          "CreatorAccountId": 1,
+          "State": 0,
+          "Accessibility": 1,
+          "SupportsLevelVoting": false,
+          "IsRRO": true,
+          "SupportsScreens": true,
+          "SupportsWalkVR": true,
+          "SupportsTeleportVR": true,
+          "SupportsVRLow": true,
+          "SupportsQuest2": true,
+          "SupportsMobile": true,
+          "SupportsJuniors": true,
+          "MinLevel": 0,
+          "CreatedAt": "2018-08-28T15:44:47.3149535Z",
+          "Stats": {
+            "CheerCount": 148045,
+            "FavoriteCount": 87262,
+            "VisitorCount": 20088713,
+            "VisitCount": 152478630
+          }
+        }
+      ]
 
     // Assert
-    return utils.compareSpecificResults(response, szTestName, szUrl, startTime, objectKeyList, null);
+    return utils.compareResultObjects(response, szTestName, szUrl, startTime, expectedObject);
 }
 
 // getRoomInfoFromNameTest
@@ -54,13 +86,45 @@ async function getRoomInfoFromName() {
 
     // Act
     var response = await recnet.getData(szUrl);
-    var objectKeyList = ['RoomId', 'IsDorm', 'CloningAllowed', 'DisableMicAutoMute', 'DisableRoomComments', 'EncryptVoiceChat', 
-                         'LoadScreenLocked', 'Name', 'Description', 'ImageName', 'WarningMask', 'CustomWarning', 'CreatorAccountId', 
-                         'State', 'Accessibility', "SupportsLevelVoting", "IsRRO", "SupportsScreens", "SupportsWalkVR", "SupportsTeleportVR",
-                         'SupportsVRLow', 'SupportsQuest2', 'SupportsMobile', 'SupportsJuniors', 'MinLevel', 'CreatedAt', 'Stats'];
+    var expectedObject = [
+        {
+          "RoomId": 170126,
+          "IsDorm": false,
+          "CloningAllowed": false,
+          "DisableMicAutoMute": false,
+          "DisableRoomComments": false,
+          "EncryptVoiceChat": false,
+          "LoadScreenLocked": false,
+          "Name": "RecCenter",
+          "Description": "A social hub to meet and mingle with friends new and old.",
+          "ImageName": "22eefa3219f046fd9e2090814650ede3",
+          "WarningMask": 0,
+          "CustomWarning": null,
+          "CreatorAccountId": 1,
+          "State": 0,
+          "Accessibility": 1,
+          "SupportsLevelVoting": false,
+          "IsRRO": true,
+          "SupportsScreens": true,
+          "SupportsWalkVR": true,
+          "SupportsTeleportVR": true,
+          "SupportsVRLow": true,
+          "SupportsQuest2": true,
+          "SupportsMobile": true,
+          "SupportsJuniors": true,
+          "MinLevel": 0,
+          "CreatedAt": "2018-08-28T15:44:47.3149535Z",
+          "Stats": {
+            "CheerCount": 148045,
+            "FavoriteCount": 87262,
+            "VisitorCount": 20088741,
+            "VisitCount": 152479094
+          }
+        }
+      ]
 
     // Assert
-    return utils.compareSpecificResults(response, szTestName, szUrl, startTime, objectKeyList, null);
+    return utils.compareResultObjects(response, szTestName, szUrl, startTime, expectedObject);
 }
 
 // getRoomsOwnedByPlayerTests

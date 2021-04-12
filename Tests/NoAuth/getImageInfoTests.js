@@ -3,7 +3,7 @@ var recnet = require('../../Classes/recnet');
 var utils = require('../../Classes/common');
 
 // Main Function for running all tests in file
-async function getImageInfoTests(message, outputDetailedResults) {
+async function getImageInfoTests(message, outputDetailedResults, client) {
     try {
         var TestResults = [];
         TestResults.push(await getImageInformationTest())
@@ -15,7 +15,7 @@ async function getImageInfoTests(message, outputDetailedResults) {
         TestResults.push(await getImagesTakenInRoom())
         TestResults.push(await getGlobalImageFeed())
 
-        await utils.sendTestResultsMessage('[Get] [No Auth] Image Information Tests', TestResults, message, outputDetailedResults);
+        await utils.sendTestResultsMessage('[Get] [No Auth] Image Information Tests', TestResults, message, outputDetailedResults, client);
     } catch (error) {
         console.log(error)
         // send message in Discord about the error that occurred

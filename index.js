@@ -54,23 +54,23 @@ client.on("message", async message => {
     if (command === "ping") {
         // Calculates ping between sending a message and editing it, giving a nice round-trip latency.
         // The second ping is an average latency between the bot and the websocket server (one-way, not round-trip)
-    
-        const m = await message.channel.send("Ping?");
-        m.edit(`Pong! Latency is ${m.createdTimestamp - message.createdTimestamp}ms. API Latency is ${Math.round(client.ping)}ms`);
-    };
 
-    if (command === "test") {
-        message.channel.send('API Test Started..');
-        var bSendAdvancedResults = ((args[0] == "1") ? true : false);
+    const m = await message.channel.send("Ping?");
+    m.edit(`Pong! Latency is ${m.createdTimestamp - message.createdTimestamp}ms. API Latency is ${Math.round(client.ping)}ms`);
+  };
 
-        //await images.getImageInfoTests(message, bSendAdvancedResults);
-        //await account.getAccountInfoTests(message, bSendAdvancedResults);
-        await rooms.getRoomInfoTests(message, bSendAdvancedResults);
+  if (command === "t") {
+    client.channels.cache.get('657120688595009546').send('API tests started...');
+    var bSendAdvancedResults = ((args[0] == "1") ? true : false);
 
-        //await imagesBulk.postImageInformationTests(message, bSendAdvancedResults);
+    await images.getImageInfoTests(message, bSendAdvancedResults, client);
+    await account.getAccountInfoTests(message, bSendAdvancedResults, client);
+    await rooms.getRoomInfoTests(message, bSendAdvancedResults, client);
 
-        message.channel.send('API Tests Completed');
-    }
+    //await imagesBulk.postImageInformationTests(message, bSendAdvancedResults);
+
+    client.channels.cache.get('657120688595009546').send(`API Tests Completed for date: ${new Date()}`);
+  }
 });
 
 client.login(config.token);

@@ -4,22 +4,38 @@ This system is used to test and verify the Rec.net private API contains the same
 
 ## Test Categories
 Each set of tests is broken up into these major categories:
- * [GET] [NoAuth] ImageInformation
-    * Image Comments
-        * Testing Entire Response
-    * Image Feed (of a given user)
-        * Testing Entire Response
-    * Image Cheers
-        * Testing Entire Response
-    * Player Images (from a given user)
-        * Testing Entire Response
-    * Image from Event
-        * Testing Entire Response
-    * Images taken in a Room
-        * Testing Entire Response
-    * Global Images (Rec.net front page)
-        * Testing URL parameters and object length/values
 
+### Image Information
+[GET] [No Authentication]
+Test Name| Test Coverage | URI 
+---------|---------------|-----
+getImageComments|Exact Match|https://api.rec.net/api/images/v1/${iImageId}/comments
+getImageInformation|Exact Match|https://api.rec.net/api/images/v4/${iImageId}
+getPlayerImageFeed|Exact Match|https://api.rec.net/api/images/v3/feed/player/${iPlayerId}
+getImageCheers|Exact Match|https://api.rec.net/api/images/v1/${iImageId}/cheers
+getPlayerImages|Exact Match|https://api.rec.net/api/images/v4/player/${iPlayerId}
+getImagesFromEvent|Exact Match|https://api.rec.net/api/images/v1/playerevent/${iEventId}
+getImagesTakenInRoom|Exact Match|https://api.rec.net/api/images/v4/room/${iRoomId}
+getGlobalImageFeed|Key Comparison Basic|https://api.rec.net/api/images/v3/feed/global?take=${takeAmount}
+
+### Account Information
+[GET] [No Authentication]
+Test Name| Test Coverage | URI 
+---------|---------------|-----
+getPlayerInformationFromId|Exact Match|https://accounts.rec.net/account/${iPlayerId}
+getPlayerInformationFromName|Exact Match|https://accounts.rec.net/account?username=${szPlayerName}
+getPlayerBioFromId|Exact Match|https://accounts.rec.net/account/${iPlayerId}/bio
+getPlayerSearchResults|Key Comparison Basic|https://accounts.rec.net/account/search?name=${szSeachParameter}
+getIdFromUsername|Exact Match|https://accounts.rec.net/account/${iPlayerId}/username
+
+### Room Information Tests
+[GET] [No Authentication]
+Test Name| Test Coverage | URI 
+---------|---------------|-----
+getRoomInfoFromId|Key Comparison Advanced|https://rooms.rec.net/rooms/bulk?id=${iRoomId}
+getRoomInfoFromName|Key Comparison Advanced|https://rooms.rec.net/rooms/bulk?name=${szRoomName}
+getRoomsOwnedByPlayer|Exact Match|https://rooms.rec.net/rooms/ownedby/${iPlayerId}
+getRoomFromSearch|Key Comparison Advanced|https://rooms.rec.net/rooms/bulk?name=${szRoomName}&take=${iTakeAmount}
 
 All tests will run twice a day, once in the morning and once at night.  I plan to test every possible URI of rec.net including all URI's that require authentication.
 

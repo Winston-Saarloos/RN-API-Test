@@ -11,9 +11,14 @@ var rooms = require('./Tests/NoAuth/getRoomInfoTests.js');
 //var imagesBulk = require('./Tests/NoAuth/postBulkImageInfoTests.js');
 
 // Development Value
-const DEVELOPMENT_MODE = true;
-const sandboxChannel = 819809580178997269n;
-const Rocko = 109498008596398080n;
+const DEVELOPMENT_MODE = config.developmentMode;
+const sandboxChannel = config.sandboxChannel;
+var botNotificationChannel = config.generalNotificationChannel;
+const Rocko = config.rocko;
+
+if (DEVELOPMENT_MODE) {
+  botNotificationChannel = sandboxChannel;
+}
 
 client.on("ready", () => {
     // This event will run if the bot starts, and logs in, successfully.
@@ -60,7 +65,7 @@ client.on("message", async message => {
   };
 
   if (command === "t") {
-    client.channels.cache.get('657120688595009546').send('API tests started...');
+    client.channels.cache.get(botNotificationChannel).send('API tests started...');
     var bSendAdvancedResults = ((args[0] == "1") ? true : false);
 
     await images.getImageInfoTests(message, bSendAdvancedResults, client);
@@ -69,7 +74,7 @@ client.on("message", async message => {
 
     //await imagesBulk.postImageInformationTests(message, bSendAdvancedResults);
 
-    client.channels.cache.get('657120688595009546').send(`API Tests Completed for date: ${new Date()}`);
+    client.channels.cache.get(botNotificationChannel).send(`API Tests Completed for date: ${new Date()}`);
   }
 });
 

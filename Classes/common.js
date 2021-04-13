@@ -1,6 +1,6 @@
 var fs = require('fs');
 const Discord = require("discord.js");
-var _ = require('lodash');
+const config = require('../Config/config.json');
 
 function compareResults(response, testName, writeResponseToFile, url, startTime, testCategoryPath) {
     var testResults = {
@@ -100,6 +100,12 @@ function compareSpecificResults(response, testName, url, startTime, objectKeyLis
 module.exports.compareSpecificResults = compareSpecificResults;
 
 async function sendTestResultsMessage(testCategoryTitle, testResults, message, outputDetailedResults, client) {
+    var notificationChannel = config.generalNotificationChannel;
+
+    if (config.developmentMode) {
+        notificationChannel = config.sandboxChannel;
+    }
+
     const greenCheckMark = 'https://discord.com/assets/212e30e47232be03033a87dc58edaa95.svg';
     const redX = 'https://discord.com/assets/8becd37ab9d13cdfe37c08c496a9def3.svg';
     if (!testResults) { return; }
@@ -132,8 +138,7 @@ async function sendTestResultsMessage(testCategoryTitle, testResults, message, o
 
             testResultEmbed.setFooter(testResults[index].Uri);
 
-            client.channels.cache.get('657120688595009546').send(testResultEmbed)
-            //message.channel.send(testResultEmbed);
+            client.channels.cache.get(notificationChannel).send(testResultEmbed)
         }
     } else {
         var totalTime = 0;
@@ -169,8 +174,7 @@ async function sendTestResultsMessage(testCategoryTitle, testResults, message, o
             { name: "Total Tests: ", value: totalTests, inline: true}
         )
 
-        //message.channel.send(testResultEmbed);
-        client.channels.cache.get('657120688595009546').send(testResultEmbed)
+        client.channels.cache.get(notificationChannel).send(testResultEmbed)
     }
 }
 

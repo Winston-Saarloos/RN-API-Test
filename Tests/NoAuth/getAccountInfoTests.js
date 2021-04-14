@@ -6,10 +6,10 @@ var utils = require('../../Classes/common');
 async function getAccountInfoTests(message, outputDetailedResults, client) {
     try {
         var TestResults = [];
-        TestResults.push(await getPlayerInformationFromIdTest());
-        TestResults.push(await getPlayerInformationFromNameTest());
-        TestResults.push(await getPlayerBioFromIdTest());
-        TestResults.push(await getPlayerSearchResultsTest());
+        TestResults.push(await getPlayerInformationFromId());
+        TestResults.push(await getPlayerInformationFromName());
+        TestResults.push(await getPlayerBioFromId());
+        TestResults.push(await getPlayerSearchResults());
         TestResults.push(await getIdFromUsername());
 
         await utils.sendTestResultsMessage('[Get] [No Auth] Account Information Tests', TestResults, message, outputDetailedResults, client);
@@ -25,7 +25,7 @@ var testCategory = 'NoAuth/GetAccountTests/';
 
 // GET API CALLS
 // getPlayerInformationTest
-async function getPlayerInformationFromIdTest() {
+async function getPlayerInformationFromId() {
     // Parmeters
     var startTime = new Date()
     var szTestName = "getPlayerInformationFromId";
@@ -41,7 +41,7 @@ async function getPlayerInformationFromIdTest() {
 
 // GET API CALLS
 // getPlayerInformationFromNameTest
-async function getPlayerInformationFromNameTest() {
+async function getPlayerInformationFromName() {
     // Parmeters
     var startTime = new Date()
     var szTestName = "getPlayerInformationFromName";
@@ -57,7 +57,7 @@ async function getPlayerInformationFromNameTest() {
 
 // GET API CALLS
 // getPlayerBioFromId
-async function getPlayerBioFromIdTest() {
+async function getPlayerBioFromId() {
     // Parmeters
     var startTime = new Date()
     var szTestName = "getPlayerBioFromId";
@@ -73,7 +73,7 @@ async function getPlayerBioFromIdTest() {
 
 // getPlayerSearchResults
 // Rec Net Search Bar
-async function getPlayerSearchResultsTest() {
+async function getPlayerSearchResults() {
     // Parmeters
     var startTime = new Date()
     var szTestName = "getPlayerSearchResults";

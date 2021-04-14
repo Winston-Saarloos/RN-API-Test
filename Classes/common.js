@@ -99,87 +99,6 @@ function compareSpecificResults(response, testName, url, startTime, objectKeyLis
 
 module.exports.compareSpecificResults = compareSpecificResults;
 
-async function sendTestResultsMessage(testCategoryTitle, testResults, message, outputDetailedResults, client) {
-    var notificationChannel = config.generalNotificationChannel;
-
-    if (config.developmentMode) {
-        notificationChannel = config.sandboxChannel;
-    }
-
-    const greenCheckMark = 'https://discord.com/assets/212e30e47232be03033a87dc58edaa95.svg';
-    const redX = 'https://discord.com/assets/8becd37ab9d13cdfe37c08c496a9def3.svg';
-    if (!testResults) { return; }
-    if (outputDetailedResults) {
-        for (index = 0; index < testResults.length; index++) {
-            const testResultEmbed = new Discord.MessageEmbed();
-            var testResultCount = testResults.length;
-
-            var statusIcon = '';
-            if (testResults[index].Status == "Passed") {
-                testResultEmbed.setColor("#4aff3d");
-                statusIcon = greenCheckMark;
-            } else {
-                testResultEmbed.setColor("#fc1100");
-                statusIcon = redX;
-            }
-
-            testResultEmbed.setTitle(`${testCategoryTitle} [${index + 1}/${testResultCount}]`);
-            testResultEmbed.setThumbnail(statusIcon);
-            testResultEmbed.addFields(
-                { name: "Test Name: " + testResults[index].Name, value: "--------", inline: false },
-                { name: 'Status:', value: testResults[index].Status, inline: true },
-                { name: 'URI Status: ', value: testResults[index].requestStatus, inline : true },
-                { name: 'Test Duration:', value: `${testResults[index].Time} sec`, inline: true }
-            )
-
-            if (testResults[index].Message != '') {
-                testResultEmbed.addField('Message', testResults[index].Message, false);
-            }
-
-            testResultEmbed.setFooter(testResults[index].Uri);
-
-            client.channels.cache.get(notificationChannel).send(testResultEmbed)
-        }
-    } else {
-        var totalTime = 0;
-        var totalTests = testResults.length;
-        var totalPassed = 0;
-        var totalFailed = 0;
-        var statusIcon = '';
-
-        const testResultEmbed = new Discord.MessageEmbed();
-        testResults.forEach(result => {
-            totalTime += result.Time;
-            if (result.Status == "Passed") {
-                totalPassed += 1;
-            } else {
-                totalFailed += 1;
-            }
-        });
-
-        if (totalFailed == 0) {
-            testResultEmbed.setColor("#4aff3d");
-            statusIcon = greenCheckMark;
-        } else {
-            testResultEmbed.setColor("#fc1100");
-            statusIcon = redX;
-        }
-
-        testResultEmbed.setTitle(`${testCategoryTitle}`);
-        testResultEmbed.setThumbnail(statusIcon);
-        testResultEmbed.addFields(
-            { name: "Passed: " + totalPassed, value: "Failed: " + totalFailed, inline: true },
-            { name: 'Test Status: ', value: ((totalFailed == 0) ? 'Passed' : 'Failed'), inline: true },
-            { name: 'Total Test Duration:', value: `${totalTime} sec`, inline: true },
-            { name: "Total Tests: ", value: totalTests, inline: true}
-        )
-
-        client.channels.cache.get(notificationChannel).send(testResultEmbed)
-    }
-}
-
-module.exports.sendTestResultsMessage = sendTestResultsMessage;
-
 // Compares the specific keys and length of an object
 //   This function is best used when comparing the results of objects that are time sensitive
 function compareResultObjects(response, testName, url, startTime, expectedObject) {
@@ -315,5 +234,85 @@ function compareValue(object1, object2) {
     return {"status" : true, "message": ''};
 }
 
-// //true if their structure, values, and keys are identical    
-// var passed = compareValues(jsonA, jsonB); 
+// Used to send out the test results into a designated discord server channel
+//  - Test results are displayed as a per category condensed embed or split out so every test has its own embed showing error messages.
+async function sendTestResultsMessage(testCategoryTitle, testResults, message, outputDetailedResults, client) {
+    var notificationChannel = config.generalNotificationChannel;
+
+    if (config.developmentMode) {
+        notificationChannel = config.sandboxChannel;
+    }
+
+    const greenCheckMark = 'https://discord.com/assets/212e30e47232be03033a87dc58edaa95.svg';
+    const redX = 'https://discord.com/assets/8becd37ab9d13cdfe37c08c496a9def3.svg';
+    if (!testResults) { return; }
+    if (outputDetailedResults) {
+        for (index = 0; index < testResults.length; index++) {
+            const testResultEmbed = new Discord.MessageEmbed();
+            var testResultCount = testResults.length;
+
+            var statusIcon = '';
+            if (testResults[index].Status == "Passed") {
+                testResultEmbed.setColor("#4aff3d");
+                statusIcon = greenCheckMark;
+            } else {
+                testResultEmbed.setColor("#fc1100");
+                statusIcon = redX;
+            }
+
+            testResultEmbed.setTitle(`${testCategoryTitle} [${index + 1}/${testResultCount}]`);
+            testResultEmbed.setThumbnail(statusIcon);
+            testResultEmbed.addFields(
+                { name: "Test Name: " + testResults[index].Name, value: "--------", inline: false },
+                { name: 'Status:', value: testResults[index].Status, inline: true },
+                { name: 'URI Status: ', value: testResults[index].requestStatus, inline : true },
+                { name: 'Test Duration:', value: `${testResults[index].Time} sec`, inline: true }
+            )
+
+            if (testResults[index].Message != '') {
+                testResultEmbed.addField('Message', testResults[index].Message, false);
+            }
+
+            testResultEmbed.setFooter(testResults[index].Uri);
+
+            client.channels.cache.get(notificationChannel).send(testResultEmbed)
+        }
+    } else {
+        var totalTime = 0;
+        var totalTests = testResults.length;
+        var totalPassed = 0;
+        var totalFailed = 0;
+        var statusIcon = '';
+
+        const testResultEmbed = new Discord.MessageEmbed();
+        testResults.forEach(result => {
+            totalTime += result.Time;
+            if (result.Status == "Passed") {
+                totalPassed += 1;
+            } else {
+                totalFailed += 1;
+            }
+        });
+
+        if (totalFailed == 0) {
+            testResultEmbed.setColor("#4aff3d");
+            statusIcon = greenCheckMark;
+        } else {
+            testResultEmbed.setColor("#fc1100");
+            statusIcon = redX;
+        }
+
+        testResultEmbed.setTitle(`${testCategoryTitle}`);
+        testResultEmbed.setThumbnail(statusIcon);
+        testResultEmbed.addFields(
+            { name: "Passed: " + totalPassed, value: "Failed: " + totalFailed, inline: true },
+            { name: 'Test Status: ', value: ((totalFailed == 0) ? 'Passed' : 'Failed'), inline: true },
+            { name: 'Total Test Duration:', value: `${totalTime} sec`, inline: true },
+            { name: "Total Tests: ", value: totalTests, inline: true}
+        )
+
+        client.channels.cache.get(notificationChannel).send(testResultEmbed)
+    }
+}
+
+module.exports.sendTestResultsMessage = sendTestResultsMessage;

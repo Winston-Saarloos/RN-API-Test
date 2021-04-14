@@ -1,5 +1,7 @@
 var axios = require("axios");
 var qs = require("qs");
+const puppeteer = require('puppeteer');
+const config = require("../Config/config.json");
 
 var axiosResult = {
     'headers': {},
@@ -111,3 +113,49 @@ async function postData(url, formData) {
 }
 
 module.exports.postData = postData;
+
+// Used for logging into recnet using a Rec Room account.
+// A 'bearer token' is used for making authenticated requests
+async function getBearerToken() {
+    const browser = await puppeteer.launch({ headless: true, slowMo: 0, devtools: false });
+    const page = await browser.newPage();
+    console.log(config.rrPassword);
+    await page.goto('https://auth.rec.net/Account/Login');
+    await page.type('#Input_Username', config.rrUsername);
+    await page.type('#Input_Password', config.rrPassword);
+    await page.keyboard.press('Enter');
+
+    await page.waitForNavigation({ waitUntil: 'networkidle0' });
+    await page.goto('https://rec.net/user/Mr.Filmz');
+
+    // await page.on('response', async (response) => {
+    //     if (response.url() == "https://match.rec.net/player?id=300314" || response.url() == "https://match.rec.net/player?id=1546112&id=300314") {
+    //         console.log('XHR response received');
+    //         console.log(await response.json());
+    //     }
+    // });
+
+    var accessTokenObj = await page.evaluate(() => { return localStorage.getItem("Bearer") });
+
+    console.log("Access Token: ", accessTokenObj);
+
+    const localStorageData = await page.evaluate(() => {
+        let json = {};
+        for (let i = 0; i < localStorage.length; i++) {
+            const key = localStorage.key(i);
+            json[key] = localStorage.getItem(key);
+        }
+        return json;
+    });
+
+    var oneStep = localStorageData["oidc.user:https://auth.rec.net:recnet"];
+    //console.log(oneStep);
+    var twoStep = JSON.parse(oneStep);
+    //console.log(twoStep["access_token"]);
+
+    return twoStep["access_token"];
+    //await page.setRequestInterception(false);
+    //await browser.close();
+};    
+
+module.exports.getBearerToken = getBearerToken;

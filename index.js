@@ -2,6 +2,7 @@
 const Discord = require("discord.js");
 
 const config = require('./Config/config.json');
+const recnet = require("./Classes/recnet");
 const client = new Discord.Client();
 
 // Test Functions
@@ -75,6 +76,11 @@ client.on("message", async message => {
     //await imagesBulk.postImageInformationTests(message, bSendAdvancedResults);
 
     client.channels.cache.get(botNotificationChannel).send(`API Tests Completed for date: ${new Date()}`);
+  }
+
+  if (command === "l") {
+    var token = await recnet.getBearerToken();
+    console.log(token);
   }
 });
 

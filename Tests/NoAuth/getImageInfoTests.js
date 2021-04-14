@@ -6,8 +6,8 @@ var utils = require('../../Classes/common');
 async function getImageInfoTests(message, outputDetailedResults, client) {
     try {
         var TestResults = [];
-        TestResults.push(await getImageInformationTest())
-        TestResults.push(await getImageCommentsTest())
+        TestResults.push(await getImageInformation())
+        TestResults.push(await getImageComments())
         TestResults.push(await getPlayerImageFeed())
         TestResults.push(await getImageCheers())
         TestResults.push(await getPlayerImages())
@@ -30,7 +30,7 @@ var testCategory = 'NoAuth/GetImageTests/';
 //
 // GET API CALLS
 // GetImageInformationTest
-async function getImageInformationTest() {
+async function getImageInformation() {
     // Parmeters
     var startTime = new Date()
     var szTestName = "getImageInformation";
@@ -45,7 +45,7 @@ async function getImageInformationTest() {
 }
 
 //GetImageCommentsTest
-async function getImageCommentsTest() {
+async function getImageComments() {
     // Parmeters
     var startTime = new Date()
     var szTestName = "getImageComments";

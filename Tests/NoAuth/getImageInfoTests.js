@@ -3,7 +3,7 @@ var recnet = require('../../Classes/recnet');
 var utils = require('../../Classes/common');
 
 // Main Function for running all tests in file
-async function getImageInfoTests(message, outputDetailedResults, client) {
+async function getImageInfoTests(outputDetailedResults, client) {
     try {
         var TestResults = [];
         TestResults.push(await getImageInformation())
@@ -15,7 +15,7 @@ async function getImageInfoTests(message, outputDetailedResults, client) {
         TestResults.push(await getImagesTakenInRoom())
         TestResults.push(await getGlobalImageFeed())
 
-        await utils.sendTestResultsMessage('[Get] [No Auth] Image Information Tests', TestResults, message, outputDetailedResults, client);
+        await utils.sendTestResultsMessage('[Get] [No Auth] Image Information Tests', TestResults, outputDetailedResults, client);
     } catch (error) {
         console.log(error)
         // send message in Discord about the error that occurred
@@ -88,9 +88,11 @@ async function getPlayerImageFeed() {
 
     // Act
     var response = await recnet.getData(szUrl);
+    var expectedLength = 64;
+    var expectedKeyList = ["Id", "Type", "Accessibility", "AccessibilityLocked", "ImageName", "Description", "PlayerId", "TaggedPlayerIds", "RoomId", "PlayerEventId", "CreatedAt", "CheerCount", "CommentCount"];
 
     // Assert
-    return utils.compareResults(response, szTestName, false, szUrl, startTime, testCategory);
+    return utils.compareSpecificResults(response, szTestName, szUrl, startTime, expectedKeyList, expectedLength);
 }
 
 //GetPlayerImages
@@ -107,9 +109,11 @@ async function getPlayerImages() {
 
     // Act
     var response = await recnet.getData(szUrl);
+    var expectedLength = 64;
+    var expectedKeyList = ["Id", "Type", "Accessibility", "AccessibilityLocked", "ImageName", "Description", "PlayerId", "TaggedPlayerIds", "RoomId", "PlayerEventId", "CreatedAt", "CheerCount", "CommentCount"];
 
     // Assert
-    return utils.compareResults(response, szTestName, false, szUrl, startTime, testCategory);
+    return utils.compareSpecificResults(response, szTestName, szUrl, startTime, expectedKeyList, expectedLength);
 }
 
 // getImagesFromEvent
@@ -122,9 +126,11 @@ async function getImagesFromEvent() {
 
     // Act
     var response = await recnet.getData(szUrl);
+    var expectedLength = 64;
+    var expectedKeyList = ["Id", "Type", "Accessibility", "AccessibilityLocked", "ImageName", "Description", "PlayerId", "TaggedPlayerIds", "RoomId", "PlayerEventId", "CreatedAt", "CheerCount", "CommentCount"]
 
     // Assert
-    return utils.compareResults(response, szTestName, false, szUrl, startTime, testCategory);
+    return utils.compareSpecificResults(response, szTestName, szUrl, startTime, expectedKeyList, expectedLength);
 }
 
 // getImagesTakenInRoom

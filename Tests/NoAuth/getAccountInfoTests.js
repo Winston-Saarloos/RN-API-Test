@@ -3,7 +3,7 @@ var recnet = require('../../Classes/recnet');
 var utils = require('../../Classes/common');
 
 // Main Function for running all tests in file
-async function getAccountInfoTests(message, outputDetailedResults, client) {
+async function getAccountInfoTests(outputDetailedResults, client) {
     try {
         var TestResults = [];
         TestResults.push(await getPlayerInformationFromId());
@@ -12,7 +12,7 @@ async function getAccountInfoTests(message, outputDetailedResults, client) {
         TestResults.push(await getPlayerSearchResults());
         TestResults.push(await getIdFromUsername());
 
-        await utils.sendTestResultsMessage('[Get] [No Auth] Account Information Tests', TestResults, message, outputDetailedResults, client);
+        await utils.sendTestResultsMessage('[Get] [No Auth] Account Information Tests', TestResults, outputDetailedResults, client);
     } catch (error) {
         console.log(error)
         // send message in Discord about the error that occurred

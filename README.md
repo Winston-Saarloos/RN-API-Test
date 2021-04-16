@@ -11,10 +11,10 @@ Test Name| Test Coverage | URI
 ---------|---------------|-----
 getImageComments|Exact Match|https://api.rec.net/api/images/v1/${iImageId}/comments
 getImageInformation|Exact Match|https://api.rec.net/api/images/v4/${iImageId}
-getPlayerImageFeed|Exact Match|https://api.rec.net/api/images/v3/feed/player/${iPlayerId}
+getPlayerImageFeed|Key Comparison Basic|https://api.rec.net/api/images/v3/feed/player/${iPlayerId}
 getImageCheers|Exact Match|https://api.rec.net/api/images/v1/${iImageId}/cheers
-getPlayerImages|Exact Match|https://api.rec.net/api/images/v4/player/${iPlayerId}
-getImagesFromEvent|Exact Match|https://api.rec.net/api/images/v1/playerevent/${iEventId}
+getPlayerImages|Key Comparison Basic|https://api.rec.net/api/images/v4/player/${iPlayerId}
+getImagesFromEvent|Key Comparison Basic|https://api.rec.net/api/images/v1/playerevent/${iEventId}
 getImagesTakenInRoom|Exact Match|https://api.rec.net/api/images/v4/room/${iRoomId}
 getGlobalImageFeed|Key Comparison Basic|https://api.rec.net/api/images/v3/feed/global?take=${takeAmount}
 

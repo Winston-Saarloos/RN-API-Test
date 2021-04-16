@@ -63,7 +63,7 @@ function compareSpecificResults(response, testName, url, startTime, objectKeyLis
             if (response.data.length == responseLength) {
                 testResults.Status = "Passed";
             } else {
-                testResults.Message += "Response did not contain the expected number of objects.  ";
+                testResults.Message += `Response did not contain the expected number of objects. Expected: [${response.data.length}] items.`;
             };
         };
 
@@ -236,7 +236,7 @@ function compareValue(object1, object2) {
 
 // Used to send out the test results into a designated discord server channel
 //  - Test results are displayed as a per category condensed embed or split out so every test has its own embed showing error messages.
-async function sendTestResultsMessage(testCategoryTitle, testResults, message, outputDetailedResults, client) {
+async function sendTestResultsMessage(testCategoryTitle, testResults, outputDetailedResults, client) {
     var notificationChannel = config.generalNotificationChannel;
 
     if (config.developmentMode) {

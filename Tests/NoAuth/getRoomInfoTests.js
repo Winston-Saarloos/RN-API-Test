@@ -3,7 +3,7 @@ var recnet = require('../../Classes/recnet');
 var utils = require('../../Classes/common');
 
 // Main Function for running all tests in file
-async function getRoomInfoTests(message, outputDetailedResults, client) {
+async function getRoomInfoTests(outputDetailedResults, client) {
     try {
         var TestResults = [];
         TestResults.push(await getRoomInfoFromId())
@@ -11,7 +11,7 @@ async function getRoomInfoTests(message, outputDetailedResults, client) {
         TestResults.push(await getRoomsOwnedByPlayer())
         TestResults.push(await getRoomFromSearch())
 
-        await utils.sendTestResultsMessage('[Get] [No Auth] Room Information Tests', TestResults, message, outputDetailedResults, client);
+        await utils.sendTestResultsMessage('[Get] [No Auth] Room Information Tests', TestResults, outputDetailedResults, client);
     } catch (error) {
         console.log(error)
         // send message in Discord about the error that occurred

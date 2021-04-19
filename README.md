@@ -48,6 +48,9 @@ getEventsCreatedByPlayer|Exact Match|https://api.rec.net/api/playerevents/v1/cre
 getEventsFromSearch|Key Comparison Basic|https://api.rec.net/api/playerevents/v1/search?query={eventName}
 getEventsInRoom|Exact Match|https://api.rec.net/api/playerevents/v1/room/${roomId}
 
+Postman Link:
+https://documenter.getpostman.com/view/13848200/TVt184DN
+
 All tests will run twice a day, once in the morning and once at night.  I plan to test every possible URI of rec.net including all URI's that require authentication.
 
 While slower than tests that run asyncronously I have developed it to run this way to prevent an over load on rec.net which results in closed connections.

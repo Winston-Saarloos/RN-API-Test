@@ -238,7 +238,7 @@ function compareValue(object1, object2) {
 //  - Test results are displayed as a per category condensed embed or split out so every test has its own embed showing error messages.
 async function sendTestResultsMessage(testCategoryTitle, testResults, outputDetailedResults, client) {
     var notificationChannel = config.generalNotificationChannel;
-
+    var testStatus = true;
     if (config.developmentMode) {
         notificationChannel = config.sandboxChannel;
     }
@@ -258,6 +258,7 @@ async function sendTestResultsMessage(testCategoryTitle, testResults, outputDeta
             } else {
                 testResultEmbed.setColor("#fc1100");
                 statusIcon = redX;
+                testStatus = false;
             }
 
             testResultEmbed.setTitle(`${testCategoryTitle} [${index + 1}/${testResultCount}]`);
@@ -300,6 +301,7 @@ async function sendTestResultsMessage(testCategoryTitle, testResults, outputDeta
         } else {
             testResultEmbed.setColor("#fc1100");
             statusIcon = redX;
+            testStatus = false;
         }
 
         testResultEmbed.setTitle(`${testCategoryTitle}`);
@@ -313,6 +315,7 @@ async function sendTestResultsMessage(testCategoryTitle, testResults, outputDeta
 
         client.channels.cache.get(notificationChannel).send(testResultEmbed)
     }
+    if (!testStatus) client.channels.cache.get(notificationChannel).send(`<@&${config.statusAlertsDiscordRoleId}> A test has failed.`);
 }
 
 module.exports.sendTestResultsMessage = sendTestResultsMessage;

@@ -77,7 +77,7 @@ client.on("message", async message => {
   const args = message.content.slice(config.prefix.length).trim().split(/ +/g);
   const command = args.shift().toLowerCase();
 
-  if (command === "ping") {
+  if (command === "ping" && DEVELOPMENT_MODE) {
     // Calculates ping between sending a message and editing it, giving a nice round-trip latency.
     // The second ping is an average latency between the bot and the websocket server (one-way, not round-trip)
 
@@ -85,23 +85,23 @@ client.on("message", async message => {
     m.edit(`Pong! Latency is ${m.createdTimestamp - message.createdTimestamp}ms. API Latency is ${Math.round(client.ping)}ms`);
   };
 
-  if (command === "t") {
+  if (command === "t" && DEVELOPMENT_MODE) {
     runTests(args);
   }
 
-  if (command === "l") {
+  if (command === "l" && DEVELOPMENT_MODE) {
     var token = await recnet.getBearerToken();
     console.log(token);
   }
 });
 
 // Runs at hour 0 every day
-const jobHour0 = schedule.scheduleJob('0 0 * * *', function () { // '* 0 0 * *' Every day at hour 0
+schedule.scheduleJob('0 0 * * *', function () { // '* 0 0 * *' Every day at hour 0
   runTests([""]);
 });
 
 // Runs at hour 12 every day
-const jobHour12 = schedule.scheduleJob('0 12 * * *', function () { // '* 0 12 * *' Every day at hour 12
+schedule.scheduleJob('0 12 * * *', function () { // '* 0 12 * *' Every day at hour 12
   runTests([""]);
 });
 

@@ -9,6 +9,7 @@ const client = new Discord.Client();
 var images = require('./Tests/NoAuth/getImageInfoTests.js');
 var account = require('./Tests/NoAuth/getAccountInfoTests.js');
 var rooms = require('./Tests/NoAuth/getRoomInfoTests.js');
+var events = require('./Tests/NoAuth/getEventInfoTests.js');
 //var imagesBulk = require('./Tests/NoAuth/postBulkImageInfoTests.js');
 
 // Development Value
@@ -53,21 +54,12 @@ async function runTests(args) {
   await images.getImageInfoTests(bSendDetailedResult, client);
   await account.getAccountInfoTests(bSendDetailedResult, client);
   await rooms.getRoomInfoTests(bSendDetailedResult, client);
+  await events.getEventInfoTests(bSendDetailedResult, client);
 
   //await imagesBulk.postImageInformationTests(message, bSendDetailedResult);
 
   client.channels.cache.get(botNotificationChannel).send(`API Tests Completed for date: ${new Date()}`);
 }
-
-// Runs at hour 0 every day
-const jobHour0 = schedule.scheduleJob('0 0 * * *', function () { // '* 0 0 * *' Every day at hour 0
-  runTests([""]);
-});
-
-// Runs at hour 12 every day
-const jobHour12 = schedule.scheduleJob('0 12 * * *', function () { // '* 0 12 * *' Every day at hour 12
-  runTests([""]);
-});
 
 client.on("message", async message => {
   if (message.author.bot) return;
@@ -101,6 +93,16 @@ client.on("message", async message => {
     var token = await recnet.getBearerToken();
     console.log(token);
   }
+});
+
+// Runs at hour 0 every day
+const jobHour0 = schedule.scheduleJob('0 0 * * *', function () { // '* 0 0 * *' Every day at hour 0
+  runTests([""]);
+});
+
+// Runs at hour 12 every day
+const jobHour12 = schedule.scheduleJob('0 12 * * *', function () { // '* 0 12 * *' Every day at hour 12
+  runTests([""]);
 });
 
 client.login(config.token);

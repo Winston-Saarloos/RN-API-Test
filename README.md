@@ -42,7 +42,7 @@ getRoomFromSearch|Key Comparison Advanced|https://rooms.rec.net/rooms/bulk?name=
 Test Name| Test Coverage | URI
 ---------|---------------|-----
 getAllEvents|Key Comparison Basic|https://api.rec.net/api/playerevents/v1
-getEventInformationFromId|Exact Match|https://api.rec.net/aapi/playerevents/v1/${eventId}
+getEventInformationFromId|Exact Match|https://api.rec.net/api/playerevents/v1/${eventId}
 getEventResponses|Exact Match|https://api.rec.net/api/playerevents/v1/${eventId}/responses
 getEventsCreatedByPlayer|Exact Match|https://api.rec.net/api/playerevents/v1/creator/${playerId}
 getEventsFromSearch|Key Comparison Basic|https://api.rec.net/api/playerevents/v1/search?query={eventName}

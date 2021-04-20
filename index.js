@@ -51,6 +51,7 @@ async function runTests(args) {
       bSendDetailedResult = true;
     }
   }
+  
   await images.getImageInfoTests(bSendDetailedResult, client);
   await account.getAccountInfoTests(bSendDetailedResult, client);
   await rooms.getRoomInfoTests(bSendDetailedResult, client);
@@ -58,7 +59,7 @@ async function runTests(args) {
 
   //await imagesBulk.postImageInformationTests(message, bSendDetailedResult);
 
-  client.channels.cache.get(botNotificationChannel).send(`API Tests Completed for date: ${new Date()}`);
+  client.channels.cache.get(botNotificationChannel).send(`API Tests Completed: ${new Date()}`);
 }
 
 client.on("message", async message => {

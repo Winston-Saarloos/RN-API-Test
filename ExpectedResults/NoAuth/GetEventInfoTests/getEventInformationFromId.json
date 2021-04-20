@@ -1,0 +1,15 @@
+{
+    "PlayerEventId": 173539,
+    "CreatorPlayerId": 5360404,
+    "ImageName": "f29266edbdb84df989c56e7193c3ee87.jpg",
+    "RoomId": 10745113,
+    "SubRoomId": 11020540,
+    "ClubId": null,
+    "Name": "BasketOfProblems",
+    "Description": "Test Event",
+    "StartTime": "2020-12-21T05:00:00Z",
+    "EndTime": "2020-12-21T06:00:00Z",
+    "AttendeeCount": 1,
+    "State": 0,
+    "Accessibility": 2
+}

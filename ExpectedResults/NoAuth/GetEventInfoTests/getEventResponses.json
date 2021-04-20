@@ -1,0 +1,1633 @@
+[
+    {
+        "PlayerEventResponseId": 18081816,
+        "PlayerEventId": 268367,
+        "PlayerId": 9085,
+        "CreatedAt": "2021-02-12T23:40:40.8406354Z",
+        "Type": 0
+    },
+    {
+        "PlayerEventResponseId": 18082594,
+        "PlayerEventId": 268367,
+        "PlayerId": 2108122,
+        "CreatedAt": "2021-02-12T23:48:43.9946655Z",
+        "Type": 0
+    },
+    {
+        "PlayerEventResponseId": 18082735,
+        "PlayerEventId": 268367,
+        "PlayerId": 929446,
+        "CreatedAt": "2021-02-12T23:52:43.3922729Z",
+        "Type": 0
+    },
+    {
+        "PlayerEventResponseId": 18082931,
+        "PlayerEventId": 268367,
+        "PlayerId": 672036,
+        "CreatedAt": "2021-02-12T23:59:55.2269116Z",
+        "Type": 0
+    },
+    {
+        "PlayerEventResponseId": 18083650,
+        "PlayerEventId": 268367,
+        "PlayerId": 1307210,
+        "CreatedAt": "2021-02-13T00:22:55.6954606Z",
+        "Type": 0
+    },
+    {
+        "PlayerEventResponseId": 18111319,
+        "PlayerEventId": 268367,
+        "PlayerId": 108319,
+        "CreatedAt": "2021-02-13T05:35:38.8699883Z",
+        "Type": 0
+    },
+    {
+        "PlayerEventResponseId": 18111322,
+        "PlayerEventId": 268367,
+        "PlayerId": 2002726,
+        "CreatedAt": "2021-02-13T05:35:38.9949951Z",
+        "Type": 0
+    },
+    {
+        "PlayerEventResponseId": 18111324,
+        "PlayerEventId": 268367,
+        "PlayerId": 1225626,
+        "CreatedAt": "2021-02-13T05:35:39.0887607Z",
+        "Type": 0
+    },
+    {
+        "PlayerEventResponseId": 18111326,
+        "PlayerEventId": 268367,
+        "PlayerId": 366937,
+        "CreatedAt": "2021-02-13T05:35:39.1668943Z",
+        "Type": 0
+    },
+    {
+        "PlayerEventResponseId": 18111328,
+        "PlayerEventId": 268367,
+        "PlayerId": 1835408,
+        "CreatedAt": "2021-02-13T05:35:39.245054Z",
+        "Type": 0
+    },
+    {
+        "PlayerEventResponseId": 18111329,
+        "PlayerEventId": 268367,
+        "PlayerId": 1700372,
+        "CreatedAt": "2021-02-13T05:35:39.2762856Z",
+        "Type": 0
+    },
+    {
+        "PlayerEventResponseId": 18111331,
+        "PlayerEventId": 268367,
+        "PlayerId": 12258,
+        "CreatedAt": "2021-02-13T05:35:39.3544239Z",
+        "Type": 0
+    },
+    {
+        "PlayerEventResponseId": 18111333,
+        "PlayerEventId": 268367,
+        "PlayerId": 1686696,
+        "CreatedAt": "2021-02-13T05:35:56.12766Z",
+        "Type": 1
+    },
+    {
+        "PlayerEventResponseId": 18111334,
+        "PlayerEventId": 268367,
+        "PlayerId": 198937,
+        "CreatedAt": "2021-02-13T05:35:56.1589134Z",
+        "Type": 2
+    },
+    {
+        "PlayerEventResponseId": 18111335,
+        "PlayerEventId": 268367,
+        "PlayerId": 42065,
+        "CreatedAt": "2021-02-13T05:35:56.1901655Z",
+        "Type": 0
+    },
+    {
+        "PlayerEventResponseId": 18111341,
+        "PlayerEventId": 268367,
+        "PlayerId": 362823,
+        "CreatedAt": "2021-02-13T05:37:06.7586372Z",
+        "Type": 0
+    },
+    {
+        "PlayerEventResponseId": 18111519,
+        "PlayerEventId": 268367,
+        "PlayerId": 668619,
+        "CreatedAt": "2021-02-13T06:07:24.0719265Z",
+        "Type": 0
+    },
+    {
+        "PlayerEventResponseId": 18111522,
+        "PlayerEventId": 268367,
+        "PlayerId": 3168839,
+        "CreatedAt": "2021-02-13T06:07:25.3394001Z",
+        "Type": 2
+    },
+    {
+        "PlayerEventResponseId": 18111524,
+        "PlayerEventId": 268367,
+        "PlayerId": 1203872,
+        "CreatedAt": "2021-02-13T06:07:25.448777Z",
+        "Type": 0
+    },
+    {
+        "PlayerEventResponseId": 18111527,
+        "PlayerEventId": 268367,
+        "PlayerId": 252960,
+        "CreatedAt": "2021-02-13T06:07:25.5894024Z",
+        "Type": 2
+    },
+    {
+        "PlayerEventResponseId": 18124066,
+        "PlayerEventId": 268367,
+        "PlayerId": 1128954,
+        "CreatedAt": "2021-02-13T10:51:49.9097439Z",
+        "Type": 0
+    },
+    {
+        "PlayerEventResponseId": 18124068,
+        "PlayerEventId": 268367,
+        "PlayerId": 596757,
+        "CreatedAt": "2021-02-13T10:51:49.9722442Z",
+        "Type": 0
+    },
+    {
+        "PlayerEventResponseId": 18124073,
+        "PlayerEventId": 268367,
+        "PlayerId": 1619414,
+        "CreatedAt": "2021-02-13T10:51:50.1285015Z",
+        "Type": 3
+    },
+    {
+        "PlayerEventResponseId": 18124077,
+        "PlayerEventId": 268367,
+        "PlayerId": 548623,
+        "CreatedAt": "2021-02-13T10:51:50.2378771Z",
+        "Type": 0
+    },
+    {
+        "PlayerEventResponseId": 18131667,
+        "PlayerEventId": 268367,
+        "PlayerId": 295292,
+        "CreatedAt": "2021-02-13T13:07:22.1717487Z",
+        "Type": 3
+    },
+    {
+        "PlayerEventResponseId": 18131668,
+        "PlayerEventId": 268367,
+        "PlayerId": 447263,
+        "CreatedAt": "2021-02-13T13:07:22.2029993Z",
+        "Type": 2
+    },
+    {
+        "PlayerEventResponseId": 18131674,
+        "PlayerEventId": 268367,
+        "PlayerId": 256147,
+        "CreatedAt": "2021-02-13T13:07:22.406136Z",
+        "Type": 0
+    },
+    {
+        "PlayerEventResponseId": 18131675,
+        "PlayerEventId": 268367,
+        "PlayerId": 1459413,
+        "CreatedAt": "2021-02-13T13:07:22.4373776Z",
+        "Type": 2
+    },
+    {
+        "PlayerEventResponseId": 18131679,
+        "PlayerEventId": 268367,
+        "PlayerId": 1322865,
+        "CreatedAt": "2021-02-13T13:07:22.6249133Z",
+        "Type": 3
+    },
+    {
+        "PlayerEventResponseId": 18131681,
+        "PlayerEventId": 268367,
+        "PlayerId": 671381,
+        "CreatedAt": "2021-02-13T13:07:22.6873999Z",
+        "Type": 2
+    },
+    {
+        "PlayerEventResponseId": 18131682,
+        "PlayerEventId": 268367,
+        "PlayerId": 127653,
+        "CreatedAt": "2021-02-13T13:07:22.7186398Z",
+        "Type": 3
+    },
+    {
+        "PlayerEventResponseId": 18131683,
+        "PlayerEventId": 268367,
+        "PlayerId": 477084,
+        "CreatedAt": "2021-02-13T13:07:22.7980096Z",
+        "Type": 2
+    },
+    {
+        "PlayerEventResponseId": 18131684,
+        "PlayerEventId": 268367,
+        "PlayerId": 247962,
+        "CreatedAt": "2021-02-13T13:07:22.8123911Z",
+        "Type": 2
+    },
+    {
+        "PlayerEventResponseId": 18131685,
+        "PlayerEventId": 268367,
+        "PlayerId": 546254,
+        "CreatedAt": "2021-02-13T13:07:22.8436439Z",
+        "Type": 2
+    },
+    {
+        "PlayerEventResponseId": 18131689,
+        "PlayerEventId": 268367,
+        "PlayerId": 354292,
+        "CreatedAt": "2021-02-13T13:07:22.9842712Z",
+        "Type": 2
+    },
+    {
+        "PlayerEventResponseId": 18131691,
+        "PlayerEventId": 268367,
+        "PlayerId": 586891,
+        "CreatedAt": "2021-02-13T13:07:23.0623978Z",
+        "Type": 0
+    },
+    {
+        "PlayerEventResponseId": 18131692,
+        "PlayerEventId": 268367,
+        "PlayerId": 156085,
+        "CreatedAt": "2021-02-13T13:07:23.1249405Z",
+        "Type": 1
+    },
+    {
+        "PlayerEventResponseId": 18131693,
+        "PlayerEventId": 268367,
+        "PlayerId": 1054350,
+        "CreatedAt": "2021-02-13T13:07:23.1561506Z",
+        "Type": 0
+    },
+    {
+        "PlayerEventResponseId": 18131695,
+        "PlayerEventId": 268367,
+        "PlayerId": 743080,
+        "CreatedAt": "2021-02-13T13:07:23.2186489Z",
+        "Type": 3
+    },
+    {
+        "PlayerEventResponseId": 18131696,
+        "PlayerEventId": 268367,
+        "PlayerId": 4195758,
+        "CreatedAt": "2021-02-13T13:07:23.2499006Z",
+        "Type": 3
+    },
+    {
+        "PlayerEventResponseId": 18131697,
+        "PlayerEventId": 268367,
+        "PlayerId": 644007,
+        "CreatedAt": "2021-02-13T13:07:23.2811549Z",
+        "Type": 2
+    },
+    {
+        "PlayerEventResponseId": 18131698,
+        "PlayerEventId": 268367,
+        "PlayerId": 747247,
+        "CreatedAt": "2021-02-13T13:07:23.3280384Z",
+        "Type": 2
+    },
+    {
+        "PlayerEventResponseId": 18131703,
+        "PlayerEventId": 268367,
+        "PlayerId": 2065458,
+        "CreatedAt": "2021-02-13T13:07:23.4999545Z",
+        "Type": 2
+    },
+    {
+        "PlayerEventResponseId": 18131712,
+        "PlayerEventId": 268367,
+        "PlayerId": 2735079,
+        "CreatedAt": "2021-02-13T13:07:23.9374233Z",
+        "Type": 0
+    },
+    {
+        "PlayerEventResponseId": 18131713,
+        "PlayerEventId": 268367,
+        "PlayerId": 592134,
+        "CreatedAt": "2021-02-13T13:07:23.9999377Z",
+        "Type": 3
+    },
+    {
+        "PlayerEventResponseId": 18131724,
+        "PlayerEventId": 268367,
+        "PlayerId": 457341,
+        "CreatedAt": "2021-02-13T13:07:24.4061935Z",
+        "Type": 2
+    },
+    {
+        "PlayerEventResponseId": 18131726,
+        "PlayerEventId": 268367,
+        "PlayerId": 876583,
+        "CreatedAt": "2021-02-13T13:07:24.4843158Z",
+        "Type": 2
+    },
+    {
+        "PlayerEventResponseId": 18131728,
+        "PlayerEventId": 268367,
+        "PlayerId": 2099573,
+        "CreatedAt": "2021-02-13T13:07:24.5474445Z",
+        "Type": 2
+    },
+    {
+        "PlayerEventResponseId": 18131729,
+        "PlayerEventId": 268367,
+        "PlayerId": 327403,
+        "CreatedAt": "2021-02-13T13:07:24.5936937Z",
+        "Type": 2
+    },
+    {
+        "PlayerEventResponseId": 18131732,
+        "PlayerEventId": 268367,
+        "PlayerId": 546877,
+        "CreatedAt": "2021-02-13T13:07:24.7187009Z",
+        "Type": 2
+    },
+    {
+        "PlayerEventResponseId": 18131739,
+        "PlayerEventId": 268367,
+        "PlayerId": 691428,
+        "CreatedAt": "2021-02-13T13:07:24.9530788Z",
+        "Type": 2
+    },
+    {
+        "PlayerEventResponseId": 18131747,
+        "PlayerEventId": 268367,
+        "PlayerId": 1198429,
+        "CreatedAt": "2021-02-13T13:07:25.2812178Z",
+        "Type": 2
+    },
+    {
+        "PlayerEventResponseId": 18131751,
+        "PlayerEventId": 268367,
+        "PlayerId": 4122429,
+        "CreatedAt": "2021-02-13T13:07:25.3906516Z",
+        "Type": 2
+    },
+    {
+        "PlayerEventResponseId": 18131752,
+        "PlayerEventId": 268367,
+        "PlayerId": 98879,
+        "CreatedAt": "2021-02-13T13:07:25.4218883Z",
+        "Type": 0
+    },
+    {
+        "PlayerEventResponseId": 18131759,
+        "PlayerEventId": 268367,
+        "PlayerId": 1538827,
+        "CreatedAt": "2021-02-13T13:07:25.6718528Z",
+        "Type": 2
+    },
+    {
+        "PlayerEventResponseId": 18131760,
+        "PlayerEventId": 268367,
+        "PlayerId": 1889769,
+        "CreatedAt": "2021-02-13T13:07:25.7033028Z",
+        "Type": 0
+    },
+    {
+        "PlayerEventResponseId": 18131768,
+        "PlayerEventId": 268367,
+        "PlayerId": 3197442,
+        "CreatedAt": "2021-02-13T13:07:25.971062Z",
+        "Type": 2
+    },
+    {
+        "PlayerEventResponseId": 18131773,
+        "PlayerEventId": 268367,
+        "PlayerId": 2031517,
+        "CreatedAt": "2021-02-13T13:07:26.1249872Z",
+        "Type": 0
+    },
+    {
+        "PlayerEventResponseId": 18131774,
+        "PlayerEventId": 268367,
+        "PlayerId": 144256,
+        "CreatedAt": "2021-02-13T13:07:26.15626Z",
+        "Type": 2
+    },
+    {
+        "PlayerEventResponseId": 18131786,
+        "PlayerEventId": 268367,
+        "PlayerId": 616700,
+        "CreatedAt": "2021-02-13T13:07:26.578127Z",
+        "Type": 2
+    },
+    {
+        "PlayerEventResponseId": 18131790,
+        "PlayerEventId": 268367,
+        "PlayerId": 3440499,
+        "CreatedAt": "2021-02-13T13:07:26.7187563Z",
+        "Type": 2
+    },
+    {
+        "PlayerEventResponseId": 18131791,
+        "PlayerEventId": 268367,
+        "PlayerId": 3383264,
+        "CreatedAt": "2021-02-13T13:07:26.7500108Z",
+        "Type": 2
+    },
+    {
+        "PlayerEventResponseId": 18131792,
+        "PlayerEventId": 268367,
+        "PlayerId": 563133,
+        "CreatedAt": "2021-02-13T13:07:26.7968835Z",
+        "Type": 3
+    },
+    {
+        "PlayerEventResponseId": 18131795,
+        "PlayerEventId": 268367,
+        "PlayerId": 2542940,
+        "CreatedAt": "2021-02-13T13:07:26.9062595Z",
+        "Type": 3
+    },
+    {
+        "PlayerEventResponseId": 18131796,
+        "PlayerEventId": 268367,
+        "PlayerId": 10142310,
+        "CreatedAt": "2021-02-13T13:07:26.9375142Z",
+        "Type": 3
+    },
+    {
+        "PlayerEventResponseId": 18131802,
+        "PlayerEventId": 268367,
+        "PlayerId": 1427180,
+        "CreatedAt": "2021-02-13T13:07:27.1562666Z",
+        "Type": 2
+    },
+    {
+        "PlayerEventResponseId": 18131803,
+        "PlayerEventId": 268367,
+        "PlayerId": 236583,
+        "CreatedAt": "2021-02-13T13:07:27.1875231Z",
+        "Type": 2
+    },
+    {
+        "PlayerEventResponseId": 18131805,
+        "PlayerEventId": 268367,
+        "PlayerId": 672960,
+        "CreatedAt": "2021-02-13T13:07:27.265646Z",
+        "Type": 2
+    },
+    {
+        "PlayerEventResponseId": 18131806,
+        "PlayerEventId": 268367,
+        "PlayerId": 1632305,
+        "CreatedAt": "2021-02-13T13:07:27.2968995Z",
+        "Type": 3
+    },
+    {
+        "PlayerEventResponseId": 18131808,
+        "PlayerEventId": 268367,
+        "PlayerId": 1579270,
+        "CreatedAt": "2021-02-13T13:07:27.375028Z",
+        "Type": 2
+    },
+    {
+        "PlayerEventResponseId": 18131811,
+        "PlayerEventId": 268367,
+        "PlayerId": 1476562,
+        "CreatedAt": "2021-02-13T13:07:27.4687787Z",
+        "Type": 2
+    },
+    {
+        "PlayerEventResponseId": 18131817,
+        "PlayerEventId": 268367,
+        "PlayerId": 225123,
+        "CreatedAt": "2021-02-13T13:07:27.6562847Z",
+        "Type": 2
+    },
+    {
+        "PlayerEventResponseId": 18131823,
+        "PlayerEventId": 268367,
+        "PlayerId": 589944,
+        "CreatedAt": "2021-02-13T13:07:27.8595414Z",
+        "Type": 3
+    },
+    {
+        "PlayerEventResponseId": 18131829,
+        "PlayerEventId": 268367,
+        "PlayerId": 3048082,
+        "CreatedAt": "2021-02-13T13:07:28.0938014Z",
+        "Type": 2
+    },
+    {
+        "PlayerEventResponseId": 18131838,
+        "PlayerEventId": 268367,
+        "PlayerId": 1246498,
+        "CreatedAt": "2021-02-13T13:07:28.4688157Z",
+        "Type": 2
+    },
+    {
+        "PlayerEventResponseId": 18131839,
+        "PlayerEventId": 268367,
+        "PlayerId": 1533645,
+        "CreatedAt": "2021-02-13T13:07:28.5469389Z",
+        "Type": 0
+    },
+    {
+        "PlayerEventResponseId": 18131840,
+        "PlayerEventId": 268367,
+        "PlayerId": 2923413,
+        "CreatedAt": "2021-02-13T13:07:28.5938183Z",
+        "Type": 0
+    },
+    {
+        "PlayerEventResponseId": 18131843,
+        "PlayerEventId": 268367,
+        "PlayerId": 383012,
+        "CreatedAt": "2021-02-13T13:07:28.7041187Z",
+        "Type": 1
+    },
+    {
+        "PlayerEventResponseId": 18131851,
+        "PlayerEventId": 268367,
+        "PlayerId": 1578632,
+        "CreatedAt": "2021-02-13T13:07:29.0000823Z",
+        "Type": 2
+    },
+    {
+        "PlayerEventResponseId": 18131857,
+        "PlayerEventId": 268367,
+        "PlayerId": 3738775,
+        "CreatedAt": "2021-02-13T13:07:29.2344538Z",
+        "Type": 2
+    },
+    {
+        "PlayerEventResponseId": 18131862,
+        "PlayerEventId": 268367,
+        "PlayerId": 1187887,
+        "CreatedAt": "2021-02-13T13:07:29.4532109Z",
+        "Type": 3
+    },
+    {
+        "PlayerEventResponseId": 18131865,
+        "PlayerEventId": 268367,
+        "PlayerId": 2616946,
+        "CreatedAt": "2021-02-13T13:07:29.5938428Z",
+        "Type": 0
+    },
+    {
+        "PlayerEventResponseId": 18131873,
+        "PlayerEventId": 268367,
+        "PlayerId": 304108,
+        "CreatedAt": "2021-02-13T13:07:29.9072752Z",
+        "Type": 3
+    },
+    {
+        "PlayerEventResponseId": 18131874,
+        "PlayerEventId": 268367,
+        "PlayerId": 718970,
+        "CreatedAt": "2021-02-13T13:07:29.9376024Z",
+        "Type": 3
+    },
+    {
+        "PlayerEventResponseId": 18131876,
+        "PlayerEventId": 268367,
+        "PlayerId": 956254,
+        "CreatedAt": "2021-02-13T13:07:30.0313566Z",
+        "Type": 3
+    },
+    {
+        "PlayerEventResponseId": 18131879,
+        "PlayerEventId": 268367,
+        "PlayerId": 738540,
+        "CreatedAt": "2021-02-13T13:07:30.156358Z",
+        "Type": 3
+    },
+    {
+        "PlayerEventResponseId": 18131887,
+        "PlayerEventId": 268367,
+        "PlayerId": 524568,
+        "CreatedAt": "2021-02-13T13:07:30.4844937Z",
+        "Type": 0
+    },
+    {
+        "PlayerEventResponseId": 18131891,
+        "PlayerEventId": 268367,
+        "PlayerId": 1134213,
+        "CreatedAt": "2021-02-13T13:07:30.6251818Z",
+        "Type": 2
+    },
+    {
+        "PlayerEventResponseId": 18131894,
+        "PlayerEventId": 268367,
+        "PlayerId": 2740635,
+        "CreatedAt": "2021-02-13T13:07:30.7501229Z",
+        "Type": 2
+    },
+    {
+        "PlayerEventResponseId": 18131899,
+        "PlayerEventId": 268367,
+        "PlayerId": 2934407,
+        "CreatedAt": "2021-02-13T13:07:30.9376327Z",
+        "Type": 0
+    },
+    {
+        "PlayerEventResponseId": 18153919,
+        "PlayerEventId": 268367,
+        "PlayerId": 323227,
+        "CreatedAt": "2021-02-13T16:59:53.7252366Z",
+        "Type": 0
+    },
+    {
+        "PlayerEventResponseId": 18156485,
+        "PlayerEventId": 268367,
+        "PlayerId": 663033,
+        "CreatedAt": "2021-02-13T17:17:02.9386893Z",
+        "Type": 3
+    },
+    {
+        "PlayerEventResponseId": 18156486,
+        "PlayerEventId": 268367,
+        "PlayerId": 536260,
+        "CreatedAt": "2021-02-13T17:17:02.9855662Z",
+        "Type": 3
+    },
+    {
+        "PlayerEventResponseId": 18156490,
+        "PlayerEventId": 268367,
+        "PlayerId": 426955,
+        "CreatedAt": "2021-02-13T17:17:03.1418206Z",
+        "Type": 3
+    },
+    {
+        "PlayerEventResponseId": 18156491,
+        "PlayerEventId": 268367,
+        "PlayerId": 648555,
+        "CreatedAt": "2021-02-13T17:17:03.1730961Z",
+        "Type": 3
+    },
+    {
+        "PlayerEventResponseId": 18156492,
+        "PlayerEventId": 268367,
+        "PlayerId": 530916,
+        "CreatedAt": "2021-02-13T17:17:03.2199494Z",
+        "Type": 3
+    },
+    {
+        "PlayerEventResponseId": 18156493,
+        "PlayerEventId": 268367,
+        "PlayerId": 704072,
+        "CreatedAt": "2021-02-13T17:17:03.2511972Z",
+        "Type": 3
+    },
+    {
+        "PlayerEventResponseId": 18156494,
+        "PlayerEventId": 268367,
+        "PlayerId": 463721,
+        "CreatedAt": "2021-02-13T17:17:03.2824502Z",
+        "Type": 3
+    },
+    {
+        "PlayerEventResponseId": 18156499,
+        "PlayerEventId": 268367,
+        "PlayerId": 357807,
+        "CreatedAt": "2021-02-13T17:17:03.4230803Z",
+        "Type": 3
+    },
+    {
+        "PlayerEventResponseId": 18156501,
+        "PlayerEventId": 268367,
+        "PlayerId": 539038,
+        "CreatedAt": "2021-02-13T17:17:03.4855807Z",
+        "Type": 2
+    },
+    {
+        "PlayerEventResponseId": 18156502,
+        "PlayerEventId": 268367,
+        "PlayerId": 516857,
+        "CreatedAt": "2021-02-13T17:17:03.5168743Z",
+        "Type": 3
+    },
+    {
+        "PlayerEventResponseId": 18156503,
+        "PlayerEventId": 268367,
+        "PlayerId": 786147,
+        "CreatedAt": "2021-02-13T17:17:03.5480904Z",
+        "Type": 3
+    },
+    {
+        "PlayerEventResponseId": 18156505,
+        "PlayerEventId": 268367,
+        "PlayerId": 479110,
+        "CreatedAt": "2021-02-13T17:17:03.6574632Z",
+        "Type": 3
+    },
+    {
+        "PlayerEventResponseId": 18156509,
+        "PlayerEventId": 268367,
+        "PlayerId": 339294,
+        "CreatedAt": "2021-02-13T17:17:03.8449684Z",
+        "Type": 3
+    },
+    {
+        "PlayerEventResponseId": 18156510,
+        "PlayerEventId": 268367,
+        "PlayerId": 756977,
+        "CreatedAt": "2021-02-13T17:17:03.8762192Z",
+        "Type": 3
+    },
+    {
+        "PlayerEventResponseId": 18156514,
+        "PlayerEventId": 268367,
+        "PlayerId": 183579,
+        "CreatedAt": "2021-02-13T17:17:04.0168492Z",
+        "Type": 2
+    },
+    {
+        "PlayerEventResponseId": 18156515,
+        "PlayerEventId": 268367,
+        "PlayerId": 294242,
+        "CreatedAt": "2021-02-13T17:17:04.1106025Z",
+        "Type": 3
+    },
+    {
+        "PlayerEventResponseId": 18156517,
+        "PlayerEventId": 268367,
+        "PlayerId": 266071,
+        "CreatedAt": "2021-02-13T17:17:04.1887293Z",
+        "Type": 3
+    },
+    {
+        "PlayerEventResponseId": 18156518,
+        "PlayerEventId": 268367,
+        "PlayerId": 437910,
+        "CreatedAt": "2021-02-13T17:17:04.2356035Z",
+        "Type": 3
+    },
+    {
+        "PlayerEventResponseId": 18156519,
+        "PlayerEventId": 268367,
+        "PlayerId": 241939,
+        "CreatedAt": "2021-02-13T17:17:04.2824801Z",
+        "Type": 2
+    },
+    {
+        "PlayerEventResponseId": 18156520,
+        "PlayerEventId": 268367,
+        "PlayerId": 473587,
+        "CreatedAt": "2021-02-13T17:17:04.31373Z",
+        "Type": 3
+    },
+    {
+        "PlayerEventResponseId": 18156521,
+        "PlayerEventId": 268367,
+        "PlayerId": 982284,
+        "CreatedAt": "2021-02-13T17:17:04.4074834Z",
+        "Type": 3
+    },
+    {
+        "PlayerEventResponseId": 18156523,
+        "PlayerEventId": 268367,
+        "PlayerId": 605250,
+        "CreatedAt": "2021-02-13T17:17:04.4543581Z",
+        "Type": 3
+    },
+    {
+        "PlayerEventResponseId": 18156526,
+        "PlayerEventId": 268367,
+        "PlayerId": 862540,
+        "CreatedAt": "2021-02-13T17:17:04.5481174Z",
+        "Type": 3
+    },
+    {
+        "PlayerEventResponseId": 18156530,
+        "PlayerEventId": 268367,
+        "PlayerId": 435616,
+        "CreatedAt": "2021-02-13T17:17:04.7043673Z",
+        "Type": 3
+    },
+    {
+        "PlayerEventResponseId": 18156531,
+        "PlayerEventId": 268367,
+        "PlayerId": 894155,
+        "CreatedAt": "2021-02-13T17:17:04.7512417Z",
+        "Type": 3
+    },
+    {
+        "PlayerEventResponseId": 18156533,
+        "PlayerEventId": 268367,
+        "PlayerId": 708990,
+        "CreatedAt": "2021-02-13T17:17:04.8137435Z",
+        "Type": 3
+    },
+    {
+        "PlayerEventResponseId": 18156534,
+        "PlayerEventId": 268367,
+        "PlayerId": 676532,
+        "CreatedAt": "2021-02-13T17:17:04.8449948Z",
+        "Type": 0
+    },
+    {
+        "PlayerEventResponseId": 18156535,
+        "PlayerEventId": 268367,
+        "PlayerId": 520777,
+        "CreatedAt": "2021-02-13T17:17:04.8762472Z",
+        "Type": 3
+    },
+    {
+        "PlayerEventResponseId": 18156536,
+        "PlayerEventId": 268367,
+        "PlayerId": 242626,
+        "CreatedAt": "2021-02-13T17:17:04.9074943Z",
+        "Type": 3
+    },
+    {
+        "PlayerEventResponseId": 18156537,
+        "PlayerEventId": 268367,
+        "PlayerId": 712248,
+        "CreatedAt": "2021-02-13T17:17:04.9387445Z",
+        "Type": 3
+    },
+    {
+        "PlayerEventResponseId": 18156539,
+        "PlayerEventId": 268367,
+        "PlayerId": 231748,
+        "CreatedAt": "2021-02-13T17:17:05.0324966Z",
+        "Type": 0
+    },
+    {
+        "PlayerEventResponseId": 18156541,
+        "PlayerEventId": 268367,
+        "PlayerId": 671129,
+        "CreatedAt": "2021-02-13T17:17:05.0949975Z",
+        "Type": 3
+    },
+    {
+        "PlayerEventResponseId": 18156545,
+        "PlayerEventId": 268367,
+        "PlayerId": 870888,
+        "CreatedAt": "2021-02-13T17:17:05.2673601Z",
+        "Type": 2
+    },
+    {
+        "PlayerEventResponseId": 18156548,
+        "PlayerEventId": 268367,
+        "PlayerId": 669999,
+        "CreatedAt": "2021-02-13T17:17:05.3293809Z",
+        "Type": 3
+    },
+    {
+        "PlayerEventResponseId": 18156551,
+        "PlayerEventId": 268367,
+        "PlayerId": 429546,
+        "CreatedAt": "2021-02-13T17:17:05.4543836Z",
+        "Type": 3
+    },
+    {
+        "PlayerEventResponseId": 18156552,
+        "PlayerEventId": 268367,
+        "PlayerId": 670406,
+        "CreatedAt": "2021-02-13T17:17:05.4856322Z",
+        "Type": 3
+    },
+    {
+        "PlayerEventResponseId": 18156553,
+        "PlayerEventId": 268367,
+        "PlayerId": 1191907,
+        "CreatedAt": "2021-02-13T17:17:05.5168867Z",
+        "Type": 3
+    },
+    {
+        "PlayerEventResponseId": 18156554,
+        "PlayerEventId": 268367,
+        "PlayerId": 309765,
+        "CreatedAt": "2021-02-13T17:17:05.5481356Z",
+        "Type": 3
+    },
+    {
+        "PlayerEventResponseId": 18156557,
+        "PlayerEventId": 268367,
+        "PlayerId": 880811,
+        "CreatedAt": "2021-02-13T17:17:05.6418841Z",
+        "Type": 3
+    },
+    {
+        "PlayerEventResponseId": 18156558,
+        "PlayerEventId": 268367,
+        "PlayerId": 1219175,
+        "CreatedAt": "2021-02-13T17:17:05.6731325Z",
+        "Type": 3
+    },
+    {
+        "PlayerEventResponseId": 18156559,
+        "PlayerEventId": 268367,
+        "PlayerId": 229737,
+        "CreatedAt": "2021-02-13T17:17:05.7043834Z",
+        "Type": 3
+    },
+    {
+        "PlayerEventResponseId": 18156561,
+        "PlayerEventId": 268367,
+        "PlayerId": 1164509,
+        "CreatedAt": "2021-02-13T17:17:05.7825149Z",
+        "Type": 3
+    },
+    {
+        "PlayerEventResponseId": 18156562,
+        "PlayerEventId": 268367,
+        "PlayerId": 797515,
+        "CreatedAt": "2021-02-13T17:17:05.82939Z",
+        "Type": 3
+    },
+    {
+        "PlayerEventResponseId": 18156563,
+        "PlayerEventId": 268367,
+        "PlayerId": 1314540,
+        "CreatedAt": "2021-02-13T17:17:05.8762672Z",
+        "Type": 3
+    },
+    {
+        "PlayerEventResponseId": 18156564,
+        "PlayerEventId": 268367,
+        "PlayerId": 1391531,
+        "CreatedAt": "2021-02-13T17:17:05.9075165Z",
+        "Type": 3
+    },
+    {
+        "PlayerEventResponseId": 18156565,
+        "PlayerEventId": 268367,
+        "PlayerId": 1072851,
+        "CreatedAt": "2021-02-13T17:17:05.9543926Z",
+        "Type": 3
+    },
+    {
+        "PlayerEventResponseId": 18156566,
+        "PlayerEventId": 268367,
+        "PlayerId": 1224203,
+        "CreatedAt": "2021-02-13T17:17:05.9856421Z",
+        "Type": 3
+    },
+    {
+        "PlayerEventResponseId": 18156567,
+        "PlayerEventId": 268367,
+        "PlayerId": 1266403,
+        "CreatedAt": "2021-02-13T17:17:06.016895Z",
+        "Type": 3
+    },
+    {
+        "PlayerEventResponseId": 18156568,
+        "PlayerEventId": 268367,
+        "PlayerId": 96969,
+        "CreatedAt": "2021-02-13T17:17:06.0481457Z",
+        "Type": 3
+    },
+    {
+        "PlayerEventResponseId": 18156570,
+        "PlayerEventId": 268367,
+        "PlayerId": 721456,
+        "CreatedAt": "2021-02-13T17:17:06.126273Z",
+        "Type": 3
+    },
+    {
+        "PlayerEventResponseId": 18156573,
+        "PlayerEventId": 268367,
+        "PlayerId": 223463,
+        "CreatedAt": "2021-02-13T17:17:06.2356471Z",
+        "Type": 3
+    },
+    {
+        "PlayerEventResponseId": 18156574,
+        "PlayerEventId": 268367,
+        "PlayerId": 220623,
+        "CreatedAt": "2021-02-13T17:17:06.2512761Z",
+        "Type": 3
+    },
+    {
+        "PlayerEventResponseId": 18156576,
+        "PlayerEventId": 268367,
+        "PlayerId": 1429582,
+        "CreatedAt": "2021-02-13T17:17:06.3294041Z",
+        "Type": 3
+    },
+    {
+        "PlayerEventResponseId": 18156577,
+        "PlayerEventId": 268367,
+        "PlayerId": 1226927,
+        "CreatedAt": "2021-02-13T17:17:06.3606527Z",
+        "Type": 3
+    },
+    {
+        "PlayerEventResponseId": 18156579,
+        "PlayerEventId": 268367,
+        "PlayerId": 1230170,
+        "CreatedAt": "2021-02-13T17:17:06.4387897Z",
+        "Type": 3
+    },
+    {
+        "PlayerEventResponseId": 18156582,
+        "PlayerEventId": 268367,
+        "PlayerId": 917835,
+        "CreatedAt": "2021-02-13T17:17:06.5325322Z",
+        "Type": 3
+    },
+    {
+        "PlayerEventResponseId": 18156583,
+        "PlayerEventId": 268367,
+        "PlayerId": 588317,
+        "CreatedAt": "2021-02-13T17:17:06.6285218Z",
+        "Type": 3
+    },
+    {
+        "PlayerEventResponseId": 18156585,
+        "PlayerEventId": 268367,
+        "PlayerId": 1234966,
+        "CreatedAt": "2021-02-13T17:17:06.8762946Z",
+        "Type": 3
+    },
+    {
+        "PlayerEventResponseId": 18156588,
+        "PlayerEventId": 268367,
+        "PlayerId": 1250099,
+        "CreatedAt": "2021-02-13T17:17:07.3294606Z",
+        "Type": 3
+    },
+    {
+        "PlayerEventResponseId": 18156591,
+        "PlayerEventId": 268367,
+        "PlayerId": 1514862,
+        "CreatedAt": "2021-02-13T17:17:07.6419375Z",
+        "Type": 3
+    },
+    {
+        "PlayerEventResponseId": 18156594,
+        "PlayerEventId": 268367,
+        "PlayerId": 1772244,
+        "CreatedAt": "2021-02-13T17:17:07.7356869Z",
+        "Type": 3
+    },
+    {
+        "PlayerEventResponseId": 18156596,
+        "PlayerEventId": 268367,
+        "PlayerId": 1826977,
+        "CreatedAt": "2021-02-13T17:17:07.8450634Z",
+        "Type": 3
+    },
+    {
+        "PlayerEventResponseId": 18156598,
+        "PlayerEventId": 268367,
+        "PlayerId": 1617384,
+        "CreatedAt": "2021-02-13T17:17:07.9075639Z",
+        "Type": 3
+    },
+    {
+        "PlayerEventResponseId": 18156602,
+        "PlayerEventId": 268367,
+        "PlayerId": 1745019,
+        "CreatedAt": "2021-02-13T17:17:08.0326398Z",
+        "Type": 3
+    },
+    {
+        "PlayerEventResponseId": 18156603,
+        "PlayerEventId": 268367,
+        "PlayerId": 2017748,
+        "CreatedAt": "2021-02-13T17:17:08.2200733Z",
+        "Type": 3
+    },
+    {
+        "PlayerEventResponseId": 18156604,
+        "PlayerEventId": 268367,
+        "PlayerId": 453457,
+        "CreatedAt": "2021-02-13T17:17:08.2670128Z",
+        "Type": 3
+    },
+    {
+        "PlayerEventResponseId": 18156607,
+        "PlayerEventId": 268367,
+        "PlayerId": 1137721,
+        "CreatedAt": "2021-02-13T17:17:08.3620066Z",
+        "Type": 3
+    },
+    {
+        "PlayerEventResponseId": 18156608,
+        "PlayerEventId": 268367,
+        "PlayerId": 1975019,
+        "CreatedAt": "2021-02-13T17:17:08.4075768Z",
+        "Type": 3
+    },
+    {
+        "PlayerEventResponseId": 18156610,
+        "PlayerEventId": 268367,
+        "PlayerId": 1327949,
+        "CreatedAt": "2021-02-13T17:17:08.4857007Z",
+        "Type": 3
+    },
+    {
+        "PlayerEventResponseId": 18156611,
+        "PlayerEventId": 268367,
+        "PlayerId": 211306,
+        "CreatedAt": "2021-02-13T17:17:08.5169518Z",
+        "Type": 2
+    },
+    {
+        "PlayerEventResponseId": 18156614,
+        "PlayerEventId": 268367,
+        "PlayerId": 1763675,
+        "CreatedAt": "2021-02-13T17:17:08.6107019Z",
+        "Type": 3
+    },
+    {
+        "PlayerEventResponseId": 18156615,
+        "PlayerEventId": 268367,
+        "PlayerId": 2093859,
+        "CreatedAt": "2021-02-13T17:17:08.7357057Z",
+        "Type": 2
+    },
+    {
+        "PlayerEventResponseId": 18156617,
+        "PlayerEventId": 268367,
+        "PlayerId": 1988445,
+        "CreatedAt": "2021-02-13T17:17:08.8919646Z",
+        "Type": 3
+    },
+    {
+        "PlayerEventResponseId": 18156618,
+        "PlayerEventId": 268367,
+        "PlayerId": 1255589,
+        "CreatedAt": "2021-02-13T17:17:08.9544635Z",
+        "Type": 3
+    },
+    {
+        "PlayerEventResponseId": 18156629,
+        "PlayerEventId": 268367,
+        "PlayerId": 4329209,
+        "CreatedAt": "2021-02-13T17:17:09.5482274Z",
+        "Type": 3
+    },
+    {
+        "PlayerEventResponseId": 18156633,
+        "PlayerEventId": 268367,
+        "PlayerId": 2621179,
+        "CreatedAt": "2021-02-13T17:17:09.7513595Z",
+        "Type": 3
+    },
+    {
+        "PlayerEventResponseId": 18156636,
+        "PlayerEventId": 268367,
+        "PlayerId": 5414192,
+        "CreatedAt": "2021-02-13T17:17:09.8451098Z",
+        "Type": 3
+    },
+    {
+        "PlayerEventResponseId": 18156639,
+        "PlayerEventId": 268367,
+        "PlayerId": 2637728,
+        "CreatedAt": "2021-02-13T17:17:09.9388623Z",
+        "Type": 2
+    },
+    {
+        "PlayerEventResponseId": 18156643,
+        "PlayerEventId": 268367,
+        "PlayerId": 3351430,
+        "CreatedAt": "2021-02-13T17:17:10.1420011Z",
+        "Type": 3
+    },
+    {
+        "PlayerEventResponseId": 18156649,
+        "PlayerEventId": 268367,
+        "PlayerId": 1642525,
+        "CreatedAt": "2021-02-13T17:17:10.3451233Z",
+        "Type": 3
+    },
+    {
+        "PlayerEventResponseId": 18156650,
+        "PlayerEventId": 268367,
+        "PlayerId": 5288233,
+        "CreatedAt": "2021-02-13T17:17:10.3763739Z",
+        "Type": 3
+    },
+    {
+        "PlayerEventResponseId": 18156656,
+        "PlayerEventId": 268367,
+        "PlayerId": 84109,
+        "CreatedAt": "2021-02-13T17:17:10.5951624Z",
+        "Type": 3
+    },
+    {
+        "PlayerEventResponseId": 18156667,
+        "PlayerEventId": 268367,
+        "PlayerId": 68792,
+        "CreatedAt": "2021-02-13T17:17:10.9857612Z",
+        "Type": 2
+    },
+    {
+        "PlayerEventResponseId": 18156669,
+        "PlayerEventId": 268367,
+        "PlayerId": 3060097,
+        "CreatedAt": "2021-02-13T17:17:11.0482623Z",
+        "Type": 2
+    },
+    {
+        "PlayerEventResponseId": 18156671,
+        "PlayerEventId": 268367,
+        "PlayerId": 1586511,
+        "CreatedAt": "2021-02-13T17:17:11.1420182Z",
+        "Type": 2
+    },
+    {
+        "PlayerEventResponseId": 18156672,
+        "PlayerEventId": 268367,
+        "PlayerId": 4455599,
+        "CreatedAt": "2021-02-13T17:17:11.1732665Z",
+        "Type": 2
+    },
+    {
+        "PlayerEventResponseId": 18156678,
+        "PlayerEventId": 268367,
+        "PlayerId": 4785795,
+        "CreatedAt": "2021-02-13T17:17:11.9545644Z",
+        "Type": 2
+    },
+    {
+        "PlayerEventResponseId": 18156679,
+        "PlayerEventId": 268367,
+        "PlayerId": 1458244,
+        "CreatedAt": "2021-02-13T17:17:11.9857846Z",
+        "Type": 0
+    },
+    {
+        "PlayerEventResponseId": 18156682,
+        "PlayerEventId": 268367,
+        "PlayerId": 3148464,
+        "CreatedAt": "2021-02-13T17:17:12.1107925Z",
+        "Type": 2
+    },
+    {
+        "PlayerEventResponseId": 18156685,
+        "PlayerEventId": 268367,
+        "PlayerId": 10395743,
+        "CreatedAt": "2021-02-13T17:17:12.2045389Z",
+        "Type": 3
+    },
+    {
+        "PlayerEventResponseId": 18156688,
+        "PlayerEventId": 268367,
+        "PlayerId": 4805793,
+        "CreatedAt": "2021-02-13T17:17:12.2514172Z",
+        "Type": 2
+    },
+    {
+        "PlayerEventResponseId": 18156690,
+        "PlayerEventId": 268367,
+        "PlayerId": 4612577,
+        "CreatedAt": "2021-02-13T17:17:12.313969Z",
+        "Type": 2
+    },
+    {
+        "PlayerEventResponseId": 18156691,
+        "PlayerEventId": 268367,
+        "PlayerId": 14154599,
+        "CreatedAt": "2021-02-13T17:17:12.3451682Z",
+        "Type": 3
+    },
+    {
+        "PlayerEventResponseId": 18156693,
+        "PlayerEventId": 268367,
+        "PlayerId": 823793,
+        "CreatedAt": "2021-02-13T17:17:12.4389227Z",
+        "Type": 3
+    },
+    {
+        "PlayerEventResponseId": 18156694,
+        "PlayerEventId": 268367,
+        "PlayerId": 255768,
+        "CreatedAt": "2021-02-13T17:17:12.4701955Z",
+        "Type": 3
+    },
+    {
+        "PlayerEventResponseId": 18156698,
+        "PlayerEventId": 268367,
+        "PlayerId": 247089,
+        "CreatedAt": "2021-02-13T17:17:12.5951764Z",
+        "Type": 3
+    },
+    {
+        "PlayerEventResponseId": 18156701,
+        "PlayerEventId": 268367,
+        "PlayerId": 362720,
+        "CreatedAt": "2021-02-13T17:17:12.7045532Z",
+        "Type": 3
+    },
+    {
+        "PlayerEventResponseId": 18156703,
+        "PlayerEventId": 268367,
+        "PlayerId": 579688,
+        "CreatedAt": "2021-02-13T17:17:12.7983031Z",
+        "Type": 3
+    },
+    {
+        "PlayerEventResponseId": 18156704,
+        "PlayerEventId": 268367,
+        "PlayerId": 1540026,
+        "CreatedAt": "2021-02-13T17:17:12.8139354Z",
+        "Type": 3
+    },
+    {
+        "PlayerEventResponseId": 18156712,
+        "PlayerEventId": 268367,
+        "PlayerId": 268951,
+        "CreatedAt": "2021-02-13T17:17:13.1108131Z",
+        "Type": 3
+    },
+    {
+        "PlayerEventResponseId": 18156713,
+        "PlayerEventId": 268367,
+        "PlayerId": 1985038,
+        "CreatedAt": "2021-02-13T17:17:13.1264466Z",
+        "Type": 2
+    },
+    {
+        "PlayerEventResponseId": 18156715,
+        "PlayerEventId": 268367,
+        "PlayerId": 608480,
+        "CreatedAt": "2021-02-13T17:17:13.2983184Z",
+        "Type": 2
+    },
+    {
+        "PlayerEventResponseId": 18156721,
+        "PlayerEventId": 268367,
+        "PlayerId": 421454,
+        "CreatedAt": "2021-02-13T17:17:13.5327012Z",
+        "Type": 3
+    },
+    {
+        "PlayerEventResponseId": 18156722,
+        "PlayerEventId": 268367,
+        "PlayerId": 1005216,
+        "CreatedAt": "2021-02-13T17:17:13.563948Z",
+        "Type": 3
+    },
+    {
+        "PlayerEventResponseId": 18156724,
+        "PlayerEventId": 268367,
+        "PlayerId": 704131,
+        "CreatedAt": "2021-02-13T17:17:13.6577027Z",
+        "Type": 3
+    },
+    {
+        "PlayerEventResponseId": 18156729,
+        "PlayerEventId": 268367,
+        "PlayerId": 1013147,
+        "CreatedAt": "2021-02-13T17:17:13.8764558Z",
+        "Type": 3
+    },
+    {
+        "PlayerEventResponseId": 18156730,
+        "PlayerEventId": 268367,
+        "PlayerId": 902227,
+        "CreatedAt": "2021-02-13T17:17:13.9233602Z",
+        "Type": 2
+    },
+    {
+        "PlayerEventResponseId": 18156731,
+        "PlayerEventId": 268367,
+        "PlayerId": 530467,
+        "CreatedAt": "2021-02-13T17:17:13.9702152Z",
+        "Type": 3
+    },
+    {
+        "PlayerEventResponseId": 18156735,
+        "PlayerEventId": 268367,
+        "PlayerId": 1034487,
+        "CreatedAt": "2021-02-13T17:17:14.1108382Z",
+        "Type": 3
+    },
+    {
+        "PlayerEventResponseId": 18156741,
+        "PlayerEventId": 268367,
+        "PlayerId": 2594615,
+        "CreatedAt": "2021-02-13T17:17:14.3452864Z",
+        "Type": 3
+    },
+    {
+        "PlayerEventResponseId": 18156744,
+        "PlayerEventId": 268367,
+        "PlayerId": 1552776,
+        "CreatedAt": "2021-02-13T17:17:14.4545976Z",
+        "Type": 3
+    },
+    {
+        "PlayerEventResponseId": 18156747,
+        "PlayerEventId": 268367,
+        "PlayerId": 4268578,
+        "CreatedAt": "2021-02-13T17:17:14.5952254Z",
+        "Type": 2
+    },
+    {
+        "PlayerEventResponseId": 18156751,
+        "PlayerEventId": 268367,
+        "PlayerId": 1408018,
+        "CreatedAt": "2021-02-13T17:17:14.7983535Z",
+        "Type": 1
+    },
+    {
+        "PlayerEventResponseId": 18156752,
+        "PlayerEventId": 268367,
+        "PlayerId": 292772,
+        "CreatedAt": "2021-02-13T17:17:14.8453318Z",
+        "Type": 2
+    },
+    {
+        "PlayerEventResponseId": 18156756,
+        "PlayerEventId": 268367,
+        "PlayerId": 300463,
+        "CreatedAt": "2021-02-13T17:17:15.0014804Z",
+        "Type": 0
+    },
+    {
+        "PlayerEventResponseId": 18156757,
+        "PlayerEventId": 268367,
+        "PlayerId": 8120211,
+        "CreatedAt": "2021-02-13T17:17:15.0483595Z",
+        "Type": 0
+    },
+    {
+        "PlayerEventResponseId": 18156758,
+        "PlayerEventId": 268367,
+        "PlayerId": 734643,
+        "CreatedAt": "2021-02-13T17:17:15.095234Z",
+        "Type": 3
+    },
+    {
+        "PlayerEventResponseId": 18156759,
+        "PlayerEventId": 268367,
+        "PlayerId": 740860,
+        "CreatedAt": "2021-02-13T17:17:15.1264848Z",
+        "Type": 3
+    },
+    {
+        "PlayerEventResponseId": 18156762,
+        "PlayerEventId": 268367,
+        "PlayerId": 660864,
+        "CreatedAt": "2021-02-13T17:17:15.2358623Z",
+        "Type": 2
+    },
+    {
+        "PlayerEventResponseId": 18174274,
+        "PlayerEventId": 268367,
+        "PlayerId": 1546112,
+        "CreatedAt": "2021-02-13T18:42:22.2923173Z",
+        "Type": 0
+    },
+    {
+        "PlayerEventResponseId": 18191991,
+        "PlayerEventId": 268367,
+        "PlayerId": 353357,
+        "CreatedAt": "2021-02-13T20:06:02.0883149Z",
+        "Type": 0
+    },
+    {
+        "PlayerEventResponseId": 18213152,
+        "PlayerEventId": 268367,
+        "PlayerId": 14826926,
+        "CreatedAt": "2021-02-13T21:33:18.4698356Z",
+        "Type": 0
+    },
+    {
+        "PlayerEventResponseId": 18236156,
+        "PlayerEventId": 268367,
+        "PlayerId": 10023596,
+        "CreatedAt": "2021-02-14T00:23:24.7003516Z",
+        "Type": 0
+    },
+    {
+        "PlayerEventResponseId": 18275581,
+        "PlayerEventId": 268367,
+        "PlayerId": 1894622,
+        "CreatedAt": "2021-02-14T08:45:24.3767024Z",
+        "Type": 0
+    },
+    {
+        "PlayerEventResponseId": 18279968,
+        "PlayerEventId": 268367,
+        "PlayerId": 1207478,
+        "CreatedAt": "2021-02-14T10:52:27.5869485Z",
+        "Type": 0
+    },
+    {
+        "PlayerEventResponseId": 18312261,
+        "PlayerEventId": 268367,
+        "PlayerId": 8085394,
+        "CreatedAt": "2021-02-14T14:01:03.7087508Z",
+        "Type": 0
+    },
+    {
+        "PlayerEventResponseId": 18326618,
+        "PlayerEventId": 268367,
+        "PlayerId": 4634207,
+        "CreatedAt": "2021-02-14T16:39:36.9487383Z",
+        "Type": 0
+    },
+    {
+        "PlayerEventResponseId": 18352199,
+        "PlayerEventId": 268367,
+        "PlayerId": 4137798,
+        "CreatedAt": "2021-02-14T19:57:00.1698776Z",
+        "Type": 0
+    },
+    {
+        "PlayerEventResponseId": 18354219,
+        "PlayerEventId": 268367,
+        "PlayerId": 13839681,
+        "CreatedAt": "2021-02-14T19:59:50.6963796Z",
+        "Type": 0
+    },
+    {
+        "PlayerEventResponseId": 18354638,
+        "PlayerEventId": 268367,
+        "PlayerId": 9027266,
+        "CreatedAt": "2021-02-14T20:06:21.7415066Z",
+        "Type": 0
+    },
+    {
+        "PlayerEventResponseId": 18356603,
+        "PlayerEventId": 268367,
+        "PlayerId": 9358729,
+        "CreatedAt": "2021-02-14T20:17:46.4546986Z",
+        "Type": 0
+    },
+    {
+        "PlayerEventResponseId": 18365474,
+        "PlayerEventId": 268367,
+        "PlayerId": 6234922,
+        "CreatedAt": "2021-02-14T20:55:26.074734Z",
+        "Type": 2
+    },
+    {
+        "PlayerEventResponseId": 18366292,
+        "PlayerEventId": 268367,
+        "PlayerId": 8495221,
+        "CreatedAt": "2021-02-14T21:02:59.40129Z",
+        "Type": 2
+    },
+    {
+        "PlayerEventResponseId": 18366854,
+        "PlayerEventId": 268367,
+        "PlayerId": 207290,
+        "CreatedAt": "2021-02-14T21:04:20.0226569Z",
+        "Type": 0
+    },
+    {
+        "PlayerEventResponseId": 18366873,
+        "PlayerEventId": 268367,
+        "PlayerId": 5709601,
+        "CreatedAt": "2021-02-14T21:06:25.7437419Z",
+        "Type": 0
+    },
+    {
+        "PlayerEventResponseId": 18368226,
+        "PlayerEventId": 268367,
+        "PlayerId": 3433749,
+        "CreatedAt": "2021-02-14T21:12:53.426216Z",
+        "Type": 0
+    },
+    {
+        "PlayerEventResponseId": 18375308,
+        "PlayerEventId": 268367,
+        "PlayerId": 3846520,
+        "CreatedAt": "2021-02-14T21:21:08.4446196Z",
+        "Type": 0
+    },
+    {
+        "PlayerEventResponseId": 18379183,
+        "PlayerEventId": 268367,
+        "PlayerId": 4317701,
+        "CreatedAt": "2021-02-14T21:56:26.0365048Z",
+        "Type": 0
+    },
+    {
+        "PlayerEventResponseId": 18415945,
+        "PlayerEventId": 268367,
+        "PlayerId": 3422044,
+        "CreatedAt": "2021-02-15T03:38:09.9401794Z",
+        "Type": 0
+    },
+    {
+        "PlayerEventResponseId": 18465476,
+        "PlayerEventId": 268367,
+        "PlayerId": 5577012,
+        "CreatedAt": "2021-02-15T13:49:38.2401518Z",
+        "Type": 2
+    },
+    {
+        "PlayerEventResponseId": 18466499,
+        "PlayerEventId": 268367,
+        "PlayerId": 10084895,
+        "CreatedAt": "2021-02-15T14:31:51.00028Z",
+        "Type": 0
+    },
+    {
+        "PlayerEventResponseId": 18480778,
+        "PlayerEventId": 268367,
+        "PlayerId": 1800970,
+        "CreatedAt": "2021-02-15T15:51:19.8343456Z",
+        "Type": 1
+    }
+]

@@ -10,6 +10,7 @@ var images = require('./Tests/NoAuth/getImageInfoTests.js');
 var account = require('./Tests/NoAuth/getAccountInfoTests.js');
 var rooms = require('./Tests/NoAuth/getRoomInfoTests.js');
 var events = require('./Tests/NoAuth/getEventInfoTests.js');
+var clubs = require('./Tests/NoAuth/getClubInfoTests.js');
 //var imagesBulk = require('./Tests/NoAuth/postBulkImageInfoTests.js');
 
 // Development Value
@@ -46,16 +47,15 @@ client.on("guildDelete", guild => {
 async function runTests(args) {
   client.channels.cache.get(botNotificationChannel).send('API tests started...');
   var bSendDetailedResult = false;
-  if (args !== "undefined" || args !== null) {
-    if ((args.length >= 1) && (args[0] == "1")) {
-      bSendDetailedResult = true;
-    }
+  if ((args.length >= 1) && (args[0] == "1")) {
+    bSendDetailedResult = true;
   }
   
   await images.getImageInfoTests(bSendDetailedResult, client);
   await account.getAccountInfoTests(bSendDetailedResult, client);
   await rooms.getRoomInfoTests(bSendDetailedResult, client);
   await events.getEventInfoTests(bSendDetailedResult, client);
+  await clubs.getClubInfoTests(bSendDetailedResult, client);
 
   //await imagesBulk.postImageInformationTests(message, bSendDetailedResult);
 

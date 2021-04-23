@@ -56,19 +56,20 @@ async function getEventInformationFromId() {
     return utils.compareResults(response, szTestName, false, szUrl, startTime, testCategory);
 }
 
-//getEventResponse
+// getEventResponse
 async function getEventResponses() {
     // Parmeters
     var startTime = new Date()
     var szTestName = "getEventResponses";
-    var iEventId = 268367;
-    var szUrl = `https://api.rec.net/api/playerevents/v1/${iEventId}/responses`;
+     var iEventId = 268367;
+     var szUrl = `https://api.rec.net/api/playerevents/v1/${iEventId}/responses`;
 
     // Act
     var response = await recnet.getData(szUrl);
+    var objectKeyList = ['PlayerEventResponseId', 'PlayerEventId', 'PlayerId', 'CreatedAt', 'Type'];
 
     // Assert
-    return utils.compareResults(response, szTestName, false, szUrl, startTime, testCategory);
+    return utils.compareSpecificResults(response, szTestName, szUrl, startTime, objectKeyList, null);
 }
 
 //getEventsCreatedByPlayer

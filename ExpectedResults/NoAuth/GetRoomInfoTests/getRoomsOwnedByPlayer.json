@@ -2,6 +2,8 @@
     {
         "RoomId": 1104928,
         "IsDorm": false,
+        "MaxPlayerCalculationMode": 0,
+        "MaxPlayers": 40,
         "CloningAllowed": false,
         "DisableMicAutoMute": false,
         "DisableRoomComments": false,

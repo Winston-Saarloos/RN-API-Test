@@ -267,7 +267,7 @@ async function sendTestResultsMessage(testCategoryTitle, testResults, outputDeta
                 { name: "Test Name: " + testResults[index].Name, value: "--------", inline: false },
                 { name: 'Status:', value: testResults[index].Status, inline: true },
                 { name: 'URI Status: ', value: testResults[index].requestStatus, inline : true },
-                { name: 'Test Duration:', value: `${testResults[index].Time} sec`, inline: true }
+                { name: 'Test Duration:', value: `${testResults[index].Time.toFixed(3)} sec`, inline: true }
             )
 
             if (testResults[index].Message != '') {
@@ -309,7 +309,7 @@ async function sendTestResultsMessage(testCategoryTitle, testResults, outputDeta
         testResultEmbed.addFields(
             { name: "Passed: " + totalPassed, value: "Failed: " + totalFailed, inline: true },
             { name: 'Test Status: ', value: ((totalFailed == 0) ? 'Passed' : 'Failed'), inline: true },
-            { name: 'Total Test Duration:', value: `${totalTime} sec`, inline: true },
+            { name: 'Total Test Duration:', value: `${totalTime.toFixed(3)} sec`, inline: true },
             { name: "Total Tests: ", value: totalTests, inline: true}
         )
 

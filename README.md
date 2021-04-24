@@ -7,16 +7,16 @@ Each set of tests is broken up into these major categories:
 
 ### Image Information
 [GET] [No Authentication]
-Test Name| Test Coverage | URI 
----------|---------------|-----
-getImageComments|Exact Match|https://api.rec.net/api/images/v1/${iImageId}/comments
-getImageInformation|Exact Match|https://api.rec.net/api/images/v4/${iImageId}
-getPlayerImageFeed|Key Comparison Basic|https://api.rec.net/api/images/v3/feed/player/${iPlayerId}
-getImageCheers|Exact Match|https://api.rec.net/api/images/v1/${iImageId}/cheers
-getPlayerImages|Key Comparison Basic|https://api.rec.net/api/images/v4/player/${iPlayerId}
-getImagesFromEvent|Key Comparison Basic|https://api.rec.net/api/images/v1/playerevent/${iEventId}
-getImagesTakenInRoom|Exact Match|https://api.rec.net/api/images/v4/room/${iRoomId}
-getGlobalImageFeed|Key Comparison Basic|https://api.rec.net/api/images/v3/feed/global?take=${takeAmount}
+Test Name| Test Coverage | URI | Query String Parameters
+---------|---------------|-----|--------------------------
+getImageComments|Exact Match|https://api.rec.net/api/images/v1/${iImageId}/comments|
+getImageInformation|Exact Match|https://api.rec.net/api/images/v4/${iImageId}|
+getPlayerImageFeed|Key Comparison Basic|https://api.rec.net/api/images/v3/feed/player/${iPlayerId}|skip={integer}, take={integer}, since={datetime}
+getImageCheers|Exact Match|https://api.rec.net/api/images/v1/${iImageId}/cheers|
+getPlayerImages|Key Comparison Basic|https://api.rec.net/api/images/v4/player/${iPlayerId}|
+getImagesFromEvent|Key Comparison Basic|https://api.rec.net/api/images/v1/playerevent/${iEventId}|
+getImagesTakenInRoom|Exact Match|https://api.rec.net/api/images/v4/room/${iRoomId}|
+getGlobalImageFeed|Key Comparison Basic|https://api.rec.net/api/images/v3/feed/global?take=${takeAmount}|
 
 ### Account Information
 [GET] [No Authentication]
@@ -30,23 +30,39 @@ getIdFromUsername|Exact Match|https://accounts.rec.net/account/${iPlayerId}/user
 
 ### Room Information Tests
 [GET] [No Authentication]
-Test Name| Test Coverage | URI 
----------|---------------|-----
-getRoomInfoFromId|Key Comparison Advanced|https://rooms.rec.net/rooms/bulk?id=${iRoomId}
-getRoomInfoFromName|Key Comparison Advanced|https://rooms.rec.net/rooms/bulk?name=${szRoomName}
-getRoomsOwnedByPlayer|Exact Match|https://rooms.rec.net/rooms/ownedby/${iPlayerId}
-getRoomFromSearch|Key Comparison Advanced|https://rooms.rec.net/rooms/bulk?name=${szRoomName}&take=${iTakeAmount}
+Test Name| Test Coverage | URI | Query String Parameters
+---------|---------------|-----|--------------------------
+getRoomInfoFromId|Key Comparison Advanced|https://rooms.rec.net/rooms/bulk?id=${iRoomId}|id={integer}
+getRoomInfoFromName|Key Comparison Advanced|https://rooms.rec.net/rooms/bulk?name=${szRoomName}|name={string}
+getRoomsOwnedByPlayer|Exact Match|https://rooms.rec.net/rooms/ownedby/${iPlayerId}|
+getRoomFromSearch|Key Comparison Advanced|https://rooms.rec.net/rooms/bulk?name=${szRoomName}&take=${iTakeAmount}|take={integer}, name={string}
+getFeaturedRooms|Key Comparison Advanced|https://rooms.rec.net/featuredrooms/current|
+getHotRooms|Key Comparison Basic|https://rooms.rec.net/rooms/hot?skip=0&take=512|skip={integer}, take={integer}
 
 ### Event Information tests
 [GET] [No Authentication]
-Test Name| Test Coverage | URI
----------|---------------|-----
-getAllEvents|Key Comparison Basic|https://api.rec.net/api/playerevents/v1
-getEventInformationFromId|Exact Match|https://api.rec.net/api/playerevents/v1/${eventId}
-getEventResponses|Exact Match|https://api.rec.net/api/playerevents/v1/${eventId}/responses
-getEventsCreatedByPlayer|Exact Match|https://api.rec.net/api/playerevents/v1/creator/${playerId}
-getEventsFromSearch|Key Comparison Basic|https://api.rec.net/api/playerevents/v1/search?query={eventName}
-getEventsInRoom|Exact Match|https://api.rec.net/api/playerevents/v1/room/${roomId}
+Test Name| Test Coverage | URI | Query String Parameters
+---------|---------------|-----|--------------------------
+getAllEvents|Key Comparison Basic|https://api.rec.net/api/playerevents/v1|
+getEventInformationFromId|Exact Match|https://api.rec.net/api/playerevents/v1/${eventId}|
+getEventResponses|Exact Match|https://api.rec.net/api/playerevents/v1/${eventId}/responses|
+getEventsCreatedByPlayer|Exact Match|https://api.rec.net/api/playerevents/v1/creator/${playerId}|skip={integer}, take={integer}
+getEventsFromSearch|Key Comparison Basic|https://api.rec.net/api/playerevents/v1/search?query={eventName}|query={string}
+getEventsInRoom|Exact Match|https://api.rec.net/api/playerevents/v1/room/${roomId}|
+
+### Clubs Information tests
+[Get] [No Authentication]
+Test Name| Test Coverage | URI | Query String Parameters
+---------|---------------|-----|--------------------------
+getTopCreators|Key Comparison Basic|https://clubs.rec.net/subscription/top/creators?skip=0&take=200|skip={integer}, take={integer}
+
+##NOT CURRENTLY IMPLEMENTED
+
+### Image Database
+[Get] [No Authentication]
+Test Name| Test Coverage | URI | Query String Parameters
+---------|---------------|-----|--------------------------
+getImage|N/A|https://img.rec.net/{imagename}| cropSquare={boolean}, width={integer}, height={integer}
 
 Postman Link:
 https://documenter.getpostman.com/view/13848200/TVt184DN
@@ -63,6 +79,5 @@ Most tests will compare the JSON response from a URI to that of an expected resu
 
 For other endpoints which return time sensitive data I will be verifying that each expected key exists in the returned JSON.  The length of a JSON object will also be compared to verify nothing was added that was not expected.
 
-
-## Built To Scale
-This project was built to scale quickly and easily.
+TODO:
+Allow advanced key comparison to read expected object from file (some of these have gotten too large for inline code).

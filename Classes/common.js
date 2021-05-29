@@ -148,7 +148,7 @@ function compareValues(JSONObjectA, JSONObjectB) {
         var keysA = Object.keys(object1).sort(),
             keysB = Object.keys(object2).sort();
 
-        //if a and b are objects with different no of keys, unequal
+        //if a and b are objects with different # of keys, unequal
         if (keysA.length !== keysB.length) {
             message += `Response JSON is not the same length as expected JSON. Expected Length: [${keysB.length}] \n`;
         }

@@ -68,12 +68,13 @@ module.exports.getData = getData;
 
 // POST RecNet
 async function postData(url, formData) {
-    //console.log(formData);
+    console.log("FORM DATA");
+    console.log(encodeURI(formData.id));
     var responseResult = axiosResult;
     axios({
         method: "post",
         url: url,
-        data: qs.stringify(formData),
+        data: formData,
         headers: { "Content-Type": "multipart/form-data" },
     })
         .then(function (response) {

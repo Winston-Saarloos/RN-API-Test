@@ -11,7 +11,7 @@ var account = require('./Tests/NoAuth/getAccountInfoTests.js');
 var rooms = require('./Tests/NoAuth/getRoomInfoTests.js');
 var events = require('./Tests/NoAuth/getEventInfoTests.js');
 var clubs = require('./Tests/NoAuth/getClubInfoTests.js');
-//var imagesBulk = require('./Tests/NoAuth/postBulkImageInfoTests.js');
+//var imagesBulk = require('./Tests/NoAuth/postBulkImageInformationTests.js');
 
 // Development Value
 const DEVELOPMENT_MODE = config.developmentMode;
@@ -57,7 +57,7 @@ async function runTests(args) {
   await events.getEventInfoTests(bSendDetailedResult, client);
   await clubs.getClubInfoTests(bSendDetailedResult, client);
 
-  //await imagesBulk.postImageInformationTests(message, bSendDetailedResult);
+  //await imagesBulk.postImageInformationTests(bSendDetailedResult, client);
 
   client.channels.cache.get(botNotificationChannel).send(`API Tests Completed: ${new Date()}`);
 }

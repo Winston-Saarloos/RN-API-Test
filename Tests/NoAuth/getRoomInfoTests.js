@@ -10,7 +10,6 @@ async function getRoomInfoTests(outputDetailedResults, client) {
     TestResults.push(await getRoomInfoFromName());
     TestResults.push(await getRoomsOwnedByPlayer());
     TestResults.push(await getRoomFromSearch());
-    TestResults.push(await getFeaturedRooms());
     TestResults.push(await getHotRooms());
 
     await utils.sendTestResultsMessage('[Get] [No Auth] Room Information Tests', TestResults, outputDetailedResults, client);
@@ -208,72 +207,17 @@ async function getFeaturedRooms() {
   // Parmeters
   var startTime = new Date()
   var szTestName = "getFeaturedRooms";
+  var iExpectedResponseLength = 64;
   var szUrl = `https://rooms.rec.net/featuredrooms/current`;
 
   // Act
   var response = await recnet.getData(szUrl);
+  console.log(response);
 
-  var expectedObject = {
-    "FeaturedRoomGroupId": 135,
-    "Name": "Featured Rooms",
-    "StartAt": "2021-04-20T07:00:00Z",
-    "EndAt": "2021-04-27T07:00:00Z",
-    "Rooms": [
-      {
-        "RoomId": 16324421,
-        "RoomName": "kyoshi-island",
-        "ImageName": "4d3b5e69f15a462c839043a15890a082.jpg"
-      },
-      {
-        "RoomId": 19722764,
-        "RoomName": "PIXELREC_3D",
-        "ImageName": "b1d41d1f87534862b3688828811f21bc.jpg"
-      },
-      {
-        "RoomId": 8063030,
-        "RoomName": "TheOakLounge",
-        "ImageName": "a583175c11d74f9788e73ac2662c337d.jpg"
-      },
-      {
-        "RoomId": 21382048,
-        "RoomName": "_WOAH_",
-        "ImageName": "633054212169423ebd8db948bf4ac9ad.jpg"
-      },
-      {
-        "RoomId": 19881694,
-        "RoomName": "TheLakesideLodge",
-        "ImageName": "67b1c0639e77471ebc03292ab586bcc8.jpg"
-      },
-      {
-        "RoomId": 19809827,
-        "RoomName": "-SUBURBS-PVP-",
-        "ImageName": "6ba0d04addcb4ade836b63991e056dba.jpg"
-      },
-      {
-        "RoomId": 18061160,
-        "RoomName": "SirWarlingtonsTown",
-        "ImageName": "991b045e16834eeeae7d61ee44c4c339.jpg"
-      },
-      {
-        "RoomId": 20602759,
-        "RoomName": "LandScapeDrive",
-        "ImageName": "724d7107ba9442158146ce89dc1502a0.jpg"
-      },
-      {
-        "RoomId": 17494800,
-        "RoomName": "-Pulse-",
-        "ImageName": "9b9108182f6d4d049bc1ae933066a6da.jpg"
-      },
-      {
-        "RoomId": 16677494,
-        "RoomName": "PARKOUR.CLASSIC",
-        "ImageName": "e081c1467bb946eab6b2c384112b0ff9.jpg"
-      }
-    ]
-  }
+  var expectedObjectKeyList = ["FeaturedRoomGroupId", "Name", "StartAt", "EndAt", "Rooms"]
 
   // Assert
-  return utils.compareResultObjects(response, szTestName, szUrl, startTime, expectedObject);
+  return utils.compareSpecificResults(response, szTestName, szUrl, startTime, expectedObjectKeyList, iExpectedResponseLength);
 }
 
 // getHotRooms

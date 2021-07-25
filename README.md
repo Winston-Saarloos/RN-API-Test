@@ -34,7 +34,7 @@ Test Name| Test Coverage | URI | Query String Parameters
 ---------|---------------|-----|--------------------------
 getRoomInfoFromId|Key Comparison Advanced|https://rooms.rec.net/rooms/bulk?id=${iRoomId}|id={integer}
 getRoomInfoFromName|Key Comparison Advanced|https://rooms.rec.net/rooms/bulk?name=${szRoomName}|name={string}
-getRoomsOwnedByPlayer|Exact Match|https://rooms.rec.net/rooms/ownedby/${iPlayerId}|
+getRoomsOwnedByPlayer|Key Comparison Advanced|https://rooms.rec.net/rooms/ownedby/${iPlayerId}|
 getRoomFromSearch|Key Comparison Advanced|https://rooms.rec.net/rooms/bulk?name=${szRoomName}&take=${iTakeAmount}|take={integer}, name={string}
 getFeaturedRooms|Key Comparison Advanced|https://rooms.rec.net/featuredrooms/current|
 getHotRooms|Key Comparison Basic|https://rooms.rec.net/rooms/hot?skip=0&take=512|skip={integer}, take={integer}

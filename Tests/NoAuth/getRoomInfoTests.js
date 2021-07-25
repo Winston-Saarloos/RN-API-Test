@@ -140,11 +140,50 @@ async function getRoomsOwnedByPlayer() {
   var iPlayerId = 1546112;
   var szUrl = `https://rooms.rec.net/rooms/ownedby/${iPlayerId}`;
 
+  var expectedObject = [
+    {
+        "RoomId": 1104928,
+        "IsDorm": false,
+        "MaxPlayerCalculationMode": 0,
+        "MaxPlayers": 40,
+        "CloningAllowed": false,
+        "DisableMicAutoMute": false,
+        "DisableRoomComments": false,
+        "EncryptVoiceChat": false,
+        "LoadScreenLocked": false,
+        "Name": "winstonhome",
+        "Description": "This room is a blank canvas. Make it into whatever you like!",
+        "ImageName": "67d337768bc840b59a74ede2593a2506",
+        "WarningMask": 0,
+        "CustomWarning": null,
+        "CreatorAccountId": 1546112,
+        "State": 0,
+        "Accessibility": 1,
+        "SupportsLevelVoting": false,
+        "IsRRO": false,
+        "SupportsScreens": true,
+        "SupportsWalkVR": true,
+        "SupportsTeleportVR": true,
+        "SupportsVRLow": true,
+        "SupportsQuest2": true,
+        "SupportsMobile": true,
+        "SupportsJuniors": true,
+        "MinLevel": 0,
+        "CreatedAt": "2019-04-10T02:17:13.2567126Z",
+        "Stats": {
+            "CheerCount": 2,
+            "FavoriteCount": 2,
+            "VisitorCount": 13,
+            "VisitCount": 16
+        }
+    }
+]
+
   // Act
   var response = await recnet.getData(szUrl);
 
   // Assert
-  return utils.compareResults(response, szTestName, false, szUrl, startTime, testCategory);
+  return utils.compareResultObjects(response, szTestName, szUrl, startTime, expectedObject);
 }
 
 // getRoomFromSearch

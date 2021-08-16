@@ -38,6 +38,7 @@ getRoomsOwnedByPlayer|Key Comparison Advanced|https://rooms.rec.net/rooms/ownedb
 getRoomFromSearch|Key Comparison Advanced|https://rooms.rec.net/rooms/bulk?name=${szRoomName}&take=${iTakeAmount}|take={integer}, name={string}
 getFeaturedRooms|Key Comparison Advanced|https://rooms.rec.net/featuredrooms/current|
 getHotRooms|Key Comparison Basic|https://rooms.rec.net/rooms/hot?skip=0&take=512|skip={integer}, take={integer}
+getRoomInfoAdvanced|Key Comparison Advanced|https://rooms.rec.net/rooms?name=reccenter&include=${i}|include={integer}
 
 ### Event Information tests
 [GET] [No Authentication]
@@ -51,7 +52,7 @@ getEventsFromSearch|Key Comparison Basic|https://api.rec.net/api/playerevents/v1
 getEventsInRoom|Exact Match|https://api.rec.net/api/playerevents/v1/room/${roomId}|
 
 ### Clubs Information tests
-[Get] [No Authentication]
+[GET] [No Authentication]
 Test Name| Test Coverage | URI | Query String Parameters
 ---------|---------------|-----|--------------------------
 getTopCreators|Key Comparison Basic|https://clubs.rec.net/subscription/top/creators?skip=0&take=200|skip={integer}, take={integer}
@@ -59,17 +60,118 @@ getTopCreators|Key Comparison Basic|https://clubs.rec.net/subscription/top/creat
 ##NOT CURRENTLY IMPLEMENTED
 
 ### Image Database
-[Get] [No Authentication]
+[GET] [No Authentication]
 Test Name| Test Coverage | URI | Query String Parameters
 ---------|---------------|-----|--------------------------
 getImage|N/A|https://img.rec.net/{imagename}| cropSquare={boolean}, width={integer}, height={integer}
+
+### Advanced Room Info
+The 'include={integer}' query string parameter allows you to get advanced information related to a room.  The table below details which values return which pieces of information.
+
+## Base Information (No "include" query param)
+```json
+[
+   {
+      "RoomId":170126,
+      "IsDorm":false,
+      "MaxPlayerCalculationMode":0,
+      "MaxPlayers":12,
+      "CloningAllowed":false,
+      "DisableMicAutoMute":false,
+      "DisableRoomComments":false,
+      "EncryptVoiceChat":false,
+      "LoadScreenLocked":false,
+      "Name":"RecCenter",
+      "Description":"A social hub to meet and mingle with friends new and old.",
+      "ImageName":"22eefa3219f046fd9e2090814650ede3",
+      "WarningMask":0,
+      "CustomWarning":null,
+      "CreatorAccountId":1,
+      "State":0,
+      "Accessibility":1,
+      "SupportsLevelVoting":false,
+      "IsRRO":true,
+      "SupportsScreens":true,
+      "SupportsWalkVR":true,
+      "SupportsTeleportVR":true,
+      "SupportsVRLow":true,
+      "SupportsQuest2":true,
+      "SupportsMobile":true,
+      "SupportsJuniors":true,
+      "MinLevel":0,
+      "CreatedAt":"2018-08-28T15:44:47.3149535Z",
+      "Stats":{
+         "CheerCount":177370,
+         "FavoriteCount":109087,
+         "VisitorCount":24514403,
+         "VisitCount":210584134
+      }
+   }
+]
+```
+
+### Include = 1
+**Subrooms Base**
+```json
+    "SubRooms": [
+        {
+            "SubRoomId": 170120,
+            "RoomId": 170126,
+            "UnitySceneId": "cbad71af-0831-44d8-b8ef-69edafa841f6",
+            "Name": "Home",
+            "DataBlob": "3ea3d0eaee6f465fa39d66699cf164b8.room",
+            "DataBlobHash": "i+iSRUQZWIiji5+QhqwYqgynn+xtp3lTT5/CoxDEzPo=",
+            "DataSavedAt": "2021-08-15T16:33:57.8812489Z",
+            "IsSandbox": false,
+            "MaxPlayers": 12,
+            "Accessibility": 1
+        }
+    ]
+```
+### Include = 2, 3
+**Subrooms Base [+] Additional Properties**
+ * SupportsJoinInProgress
+ * UseLevelBasedMatchmaking
+ * UseAgeBasedMatchmaking
+ * UseRecRoyaleMatchMaking
+```json
+    "SubRooms": [
+        {
+            "SupportsJoinInProgress": true,
+            "UseLevelBasedMatchmaking": false,
+            "UseAgeBasedMatchmaking": true,
+            "UseRecRoyaleMatchmaking": false
+        }
+    ]
+```
+### Include = 4
+**Roles**
+```json
+"Roles": [
+        {
+            "AccountId": 1852,
+            "Role": 20,
+            "LastChangedByAccountId": null,
+            "InvitedRole": 0
+        }
+      ]
+```
+Role ID|Role Name
+----------|---------
+20|Moderator
+30|Co-Owner
+255|Owner
+
+### Include = 5, 6
+**Subrooms Base, Roles**
+
 
 Postman Link:
 https://documenter.getpostman.com/view/13848200/TVt184DN
 
 All tests will run twice a day, once in the morning and once at night.  I plan to test every possible URI of rec.net including all URI's that require authentication.
 
-While slower than tests that run asyncronously I have developed it to run this way to prevent an over load on rec.net which results in closed connections.
+While slower than tests that run asyncronously I have developed it to run this way to prevent an over load on rec.net which results in closed/refused connections.
 
 ## Result Output
 All output from scheduled tests will show a single message for each major category.  This message will be displayed as a embed inside of a Discord message.  If 1 or more tests from a category fail then it will show up as failed (Red).  If all tests pass then the message will show up as passed (Green).  The condensed version of the embed shows total time taken to run tests as well as the total number of tests run.
